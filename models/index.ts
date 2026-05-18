@@ -51,7 +51,7 @@ const GallerySchema = new Schema<IGallery>({
   published:     { type: Boolean, default: false },
 }, { timestamps: true });
 
-export const Gallery = models.Gallery || model<IGallery>('Gallery', GallerySchema);
+export const Gallery = (models.Gallery || model<IGallery>('Gallery', GallerySchema)) as mongoose.Model<IGallery>;
 
 // ─── TeamMember ────────────────────────────────────────────────────────────
 export interface ITeamMember extends Document {
