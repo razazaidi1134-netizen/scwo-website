@@ -1,11 +1,16 @@
-// ─── app/admin/gallery/[id]/page.tsx ────────────────────────────────────
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
+import { authOptions } from '@/lib/auth';
 import { connectDB } from '@/lib/mongodb';
 import { Gallery } from '@/models';
 import GalleryForm from '@/components/admin/GalleryForm';
 
-export async function GalleryEditPage({ params }: { params: { id: string } }) {
+export default async function GalleryEditPage({ params }: { params: { id: string } }) {
+  const session = await getServerSession(authOptions);
+  if (!session) redirect('/admin/login');
+
   const isNew = params.id === 'new';
   let item = null;
   if (!isNew) {
@@ -29,5 +34,3 @@ export async function GalleryEditPage({ params }: { params: { id: string } }) {
     </div>
   );
 }
-
-export default GalleryEditPage;
