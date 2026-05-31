@@ -11,8 +11,8 @@ const metaItems = [
 ];
 
 const tickerItems = [
-  'Healthcare Hub', 'Education Hub', 'Food Relief',
-  'Women Works Hub', 'Legal Aid Hub', 'Flood Relief', 'Social Welfare',
+  'Healthcare Hub', 'Education Hub', 'Computer Training',
+  'Women Works Hub', 'Legal Aid Hub', 'Industrial Homes', 'Social Welfare',
 ];
 
 export default function HeroSection() {
@@ -26,7 +26,7 @@ export default function HeroSection() {
         style={{
           background: 'var(--g9)',
           color: '#fff',
-          padding: '80px 0 100px',
+          padding: '100px 0 160px',
           minHeight: 600,
         }}
       >
@@ -60,7 +60,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 style={{
                   fontFamily: 'var(--font-fraunces), serif',
-                  fontSize: 'clamp(44px, 7vw, 80px)',
+                  fontSize: 'clamp(52px, 7vw, 80px)',
                   fontWeight: 400,
                   lineHeight: 1.02,
                   letterSpacing: '-0.03em',
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                style={{ fontSize: 17, color: 'rgba(255,255,255,.75)', maxWidth: 520, marginBottom: 36, lineHeight: 1.65 }}
+                style={{ fontSize: 18, color: 'rgba(255,255,255,.75)', maxWidth: 520, marginBottom: 36, lineHeight: 1.65 }}
               >
                 Sindh Citizen Welfare Organization is a humanitarian non-profit based in Karachi,
                 dedicated to transforming lives across Sindh through healthcare, education,
@@ -269,7 +269,7 @@ export default function HeroSection() {
         style={{
           background: 'var(--a5)',
           color: 'var(--g9)',
-          padding: '20px 0',
+          padding: '18px 0',
           overflow: 'hidden',
           borderTop: '1px solid var(--au)',
           borderBottom: '1px solid var(--au)',

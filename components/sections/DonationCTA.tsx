@@ -1,74 +1,158 @@
 'use client';
 
 import Link from 'next/link';
-import { Heart } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
+const presetAmounts = ['500', '1,000', '2,500', '5,000', '10,000', '25,000'];
+
 export default function DonationCTA() {
+  const [active, setActive] = useState('1,000');
+  const [custom, setCustom] = useState('');
+
   return (
-    <section className="relative overflow-hidden py-20 md:py-28" style={{ background: 'var(--g9)' }}>
-      {/* Dot pattern overlay */}
+    <section className="relative overflow-hidden" style={{ background: 'var(--a5)', padding: '80px 0' }}>
+      {/* Watermark heart */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        aria-hidden
+        className="absolute pointer-events-none select-none"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,.06) 1.5px, transparent 1.5px)`,
-          backgroundSize: '24px 24px',
+          right: -80,
+          top: -160,
+          fontSize: '500px',
+          lineHeight: 1,
+          color: 'var(--g9)',
+          opacity: 0.06,
         }}
-      />
-      {/* Ambient glows */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(212,160,23,.08)' }} />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full blur-3xl pointer-events-none"
-        style={{ background: 'rgba(20,90,63,.25)' }} />
+      >
+        ♥
+      </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <AnimatedSection>
-            <motion.div
-              animate={{ scale: [1, 1.08, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              className="inline-flex items-center justify-center w-16 h-16 rounded-lg mb-8"
-              style={{ background: 'rgba(255,255,255,.1)' }}
-            >
-              <Heart className="w-8 h-8" style={{ color: 'var(--a4)', fill: 'var(--a4)' }} />
-            </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
 
+          {/* LEFT — content */}
+          <AnimatedSection>
+            <div className="eyebrow" style={{ color: 'var(--g9)', opacity: 0.7 }}>Support Our Mission</div>
             <h2
-              className="mb-5"
               style={{
                 fontFamily: 'var(--font-fraunces), serif',
-                fontSize: 'clamp(32px, 5vw, 48px)',
+                fontSize: 'clamp(40px, 5vw, 60px)',
                 fontWeight: 400,
-                color: '#fff',
-                lineHeight: 1.15,
+                color: 'var(--g9)',
+                margin: '20px 0 24px',
                 letterSpacing: '-0.02em',
+                lineHeight: 1.1,
               }}
             >
-              Your Support Can{' '}
-              <em style={{ fontStyle: 'italic', color: 'var(--a4)' }}>Change Lives</em>
+              Help us <em style={{ fontStyle: 'italic' }}>save lives</em>.
             </h2>
-
-            <p style={{ color: 'rgba(255,255,255,.65)', fontSize: '17px', lineHeight: 1.75, marginBottom: '16px' }}>
-              Every contribution helps SCWO continue its humanitarian mission across Sindh.
-              Your support directly contributes to healthcare services, educational
-              initiatives, women empowerment programs, legal aid, and social welfare
-              support for deserving communities.
+            <p style={{ fontSize: '17px', color: 'var(--g8)', lineHeight: 1.75, marginBottom: '32px', maxWidth: '480px' }}>
+              Your donation directly funds healthcare, education, women empowerment, legal aid,
+              and social welfare programs for deserving communities across Sindh.
             </p>
-
-            <p style={{ color: 'rgba(255,255,255,.45)', fontSize: '15px', marginBottom: '40px' }}>
-              Together, we can create a stronger, more compassionate, and empowered society.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact#donate" className="btn btn-primary btn-lg">
-                Donate Today →
+            <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
+              <Link href="/contact#donate" className="btn btn-dark btn-lg">
+                Donate Now →
               </Link>
-              <Link href="/contact" className="btn btn-outline btn-lg">
-                Support Our Mission
+              <Link
+                href="/contact"
+                className="btn btn-outline btn-lg"
+                style={{ borderColor: 'var(--g9)', color: 'var(--g9)' }}
+              >
+                Learn More
               </Link>
             </div>
           </AnimatedSection>
+
+          {/* RIGHT — donation box */}
+          <AnimatedSection delay={0.15}>
+            <div style={{ background: 'var(--g9)', padding: '40px', borderRadius: '2px' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-mono), monospace',
+                  fontSize: '11px',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase' as const,
+                  color: 'var(--a4)',
+                  marginBottom: '20px',
+                }}
+              >
+                Choose an Amount (PKR)
+              </div>
+
+              {/* Amount pills — 3×2 grid */}
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                {presetAmounts.map((amt) => (
+                  <button
+                    key={amt}
+                    type="button"
+                    onClick={() => { setActive(amt); setCustom(''); }}
+                    style={{
+                      fontFamily: 'var(--font-fraunces), serif',
+                      fontSize: '15px',
+                      fontWeight: 500,
+                      padding: '10px 8px',
+                      border: '1px solid',
+                      borderColor: active === amt && !custom ? 'var(--a5)' : 'rgba(255,255,255,.15)',
+                      borderRadius: '2px',
+                      background: active === amt && !custom ? 'var(--a5)' : 'rgba(255,255,255,.05)',
+                      color: active === amt && !custom ? 'var(--g9)' : 'rgba(255,255,255,.75)',
+                      cursor: 'pointer',
+                      transition: 'all .2s',
+                    }}
+                  >
+                    {amt}
+                  </button>
+                ))}
+              </div>
+
+              {/* Custom amount input */}
+              <input
+                type="text"
+                placeholder="Or enter custom amount"
+                value={custom}
+                onChange={(e) => { setCustom(e.target.value); setActive(''); }}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  background: 'rgba(255,255,255,.05)',
+                  border: `1px solid ${custom ? 'var(--a5)' : 'rgba(255,255,255,.15)'}`,
+                  borderRadius: '2px',
+                  color: '#fff',
+                  fontSize: '14px',
+                  outline: 'none',
+                  marginBottom: '20px',
+                  fontFamily: 'var(--font-manrope), sans-serif',
+                  boxSizing: 'border-box' as const,
+                }}
+              />
+
+              {/* Donate button */}
+              <Link
+                href="/contact#donate"
+                className="btn btn-primary"
+                style={{ width: '100%', justifyContent: 'center', display: 'flex', fontSize: '15px', padding: '16px 24px' }}
+              >
+                Donate Now →
+              </Link>
+
+              {/* Footer note */}
+              <p
+                style={{
+                  fontFamily: 'var(--font-mono), monospace',
+                  fontSize: '10px',
+                  color: 'rgba(255,255,255,.35)',
+                  textAlign: 'center',
+                  marginTop: '16px',
+                  letterSpacing: '0.05em',
+                }}
+              >
+                100% of your donation goes directly to programs
+              </p>
+            </div>
+          </AnimatedSection>
+
         </div>
       </div>
     </section>

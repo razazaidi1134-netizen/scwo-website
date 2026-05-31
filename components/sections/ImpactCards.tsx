@@ -42,9 +42,9 @@ export default function ImpactCards() {
         aria-hidden
         className="absolute pointer-events-none select-none"
         style={{
-          top: 50, right: -40,
+          top: 50, right: -80,
           fontFamily: 'var(--font-fraunces), serif',
-          fontSize: 'clamp(120px, 18vw, 220px)',
+          fontSize: '300px',
           fontWeight: 700,
           color: 'rgba(15,76,53,.04)',
           lineHeight: 1,
@@ -129,7 +129,7 @@ export default function ImpactCards() {
               <h3
                 style={{
                   fontFamily: 'var(--font-fraunces), serif',
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: 500,
                   color: 'var(--g9)',
                   marginBottom: 12,

@@ -28,7 +28,7 @@ export default function WomenEmpowerment() {
               borderRadius: '2px',
               overflow: 'hidden',
               position: 'relative',
-              minHeight: '380px',
+              minHeight: '480px',
               border: '1px solid rgba(212,160,23,.2)',
               display: 'flex',
               flexDirection: 'column',
