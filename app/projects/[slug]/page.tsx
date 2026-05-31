@@ -65,7 +65,15 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const program = programs[params.slug];
   if (!program) return {};
-  return { title: `${program.title} | SCWO Welfare Programs`, description: program.description };
+  return {
+    title: `${program.title} | SCWO Welfare Programs`,
+    description: program.description,
+    openGraph: {
+      title: `${program.title} | SCWO Welfare Programs`,
+      description: program.description,
+      url: `https://sindhcitizenwelfare.org/projects/${params.slug}`,
+    },
+  };
 }
 
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
@@ -76,7 +84,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
   return (
     <div>
       {/* ── HERO ── */}
-      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 64px 120px', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 0 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 75% 30%, rgba(212,160,23,.12) 0%, transparent 55%)', pointerEvents: 'none' }} />
         <div className="container-custom" style={{ position: 'relative' }}>
           <Link href="/projects" style={{
@@ -87,7 +95,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             marginBottom: '40px',
           }}>← All Programs</Link>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px', flexWrap: 'wrap' }}>
             <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', letterSpacing: '0.15em', color: 'var(--a4)' }}>{program.num}</span>
             <div style={{ width: '56px', height: '56px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', border: '3px solid rgba(212,160,23,.3)' }}>
               {program.emoji}
@@ -103,9 +111,9 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
       </div>
 
       {/* ── CONTENT ── */}
-      <section style={{ background: 'var(--cream)', padding: '100px 64px' }}>
+      <section style={{ background: 'var(--cream)', padding: '100px 0' }}>
         <div className="container-custom">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '48px', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-10 items-start">
 
             {/* Main content */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
@@ -142,7 +150,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             </div>
 
             {/* Sidebar */}
-            <aside style={{ display: 'flex', flexDirection: 'column', gap: '1px', position: 'sticky', top: '100px' }}>
+            <aside className="lg:sticky lg:top-[100px]" style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
               <AnimatedSection delay={0.1}>
                 <div style={{ border: '1px solid var(--line)', borderBottom: 'none', borderRadius: '2px 2px 0 0', overflow: 'hidden' }}>
                   <div style={{ background: 'var(--g9)', padding: '16px 24px' }}>
@@ -180,7 +188,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                 </div>
               </AnimatedSection>
 
-              {/* Programs nav — CSS hover via className, no JS events */}
+              {/* Programs nav */}
               <AnimatedSection delay={0.2}>
                 <div style={{ border: '1px solid var(--line)', borderTop: 'none', borderRadius: '0 0 2px 2px', overflow: 'hidden' }}>
                   <div style={{ background: 'var(--paper)', padding: '14px 24px', borderBottom: '1px solid var(--line)' }}>

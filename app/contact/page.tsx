@@ -5,6 +5,11 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 export const metadata: Metadata = {
   title: 'Contact SCWO | Welfare Organization Karachi Pakistan',
   description: 'Contact Sindh Citizen Welfare Organization (SCWO) for donations, volunteer opportunities, partnerships, and humanitarian support initiatives.',
+  openGraph: {
+    title: 'Contact SCWO | Welfare Organization Karachi Pakistan',
+    description: 'Contact SCWO for donations, volunteering, partnerships, and humanitarian support in Karachi, Pakistan.',
+    url: 'https://sindhcitizenwelfare.org/contact',
+  },
 };
 
 const contactDetails = [
@@ -45,7 +50,7 @@ export default function ContactPage() {
       `}</style>
 
       {/* ── HERO ── */}
-      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 64px 120px', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 0 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 80% 20%, rgba(212,160,23,.12) 0%, transparent 50%)', pointerEvents: 'none' }} />
         <div className="container-custom" style={{ position: 'relative' }}>
           <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>Reach Out</div>
@@ -56,7 +61,7 @@ export default function ContactPage() {
             We welcome partnerships, volunteers, donors, and supporters who share our vision of
             building a stronger and more compassionate society across Sindh.
           </p>
-          <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)' }}>
+          <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)', flexWrap: 'wrap' }}>
             {[{ label: 'Response Time', value: '24–48 hrs' }, { label: 'Location', value: 'Karachi' }, { label: 'Open', value: 'Mon – Sat' }].map(({ label, value }) => (
               <div key={label}>
                 <small style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
@@ -68,13 +73,13 @@ export default function ContactPage() {
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <section style={{ background: 'var(--cream)', padding: '100px 64px' }}>
+      <section style={{ background: 'var(--cream)', padding: '100px 0' }}>
         <div className="container-custom">
-          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '48px', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-10 items-start">
 
             {/* Form panel */}
             <AnimatedSection>
-              <div style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: '2px', padding: '48px' }}>
+              <div style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: '2px', padding: 'clamp(24px, 4vw, 48px)' }}>
                 <div className="eyebrow">Send a Message</div>
                 <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '36px', fontWeight: 400, color: 'var(--g9)', margin: '16px 0 8px', letterSpacing: '-0.02em' }}>
                   How can we help?

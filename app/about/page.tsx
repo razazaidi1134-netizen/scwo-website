@@ -5,6 +5,11 @@ import DonationCTA from '@/components/sections/DonationCTA';
 export const metadata: Metadata = {
   title: 'About SCWO | Sindh Citizen Welfare Organization Pakistan',
   description: 'Learn about Sindh Citizen Welfare Organization (SCWO), a humanitarian NGO serving communities across Sindh through healthcare, education, welfare, and empowerment programs.',
+  openGraph: {
+    title: 'About SCWO | Sindh Citizen Welfare Organization Pakistan',
+    description: 'Learn about Sindh Citizen Welfare Organization (SCWO), a humanitarian NGO serving communities across Sindh.',
+    url: 'https://sindhcitizenwelfare.org/about',
+  },
 };
 
 const values = [
@@ -35,7 +40,7 @@ export default function AboutPage() {
     <div>
 
       {/* ── HERO ── */}
-      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 64px 120px', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 0 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 75% 30%, rgba(212,160,23,.13) 0%, transparent 55%)', pointerEvents: 'none' }} />
         <div className="container-custom" style={{ position: 'relative' }}>
           <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>About SCWO</div>
@@ -55,7 +60,7 @@ export default function AboutPage() {
             healthcare, education, women empowerment, legal aid, and social welfare.
           </p>
           {/* Meta strip */}
-          <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)' }}>
+          <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)', flexWrap: 'wrap' }}>
             {[{ label: 'Est.', value: '2024' }, { label: 'Programs', value: '7 Active' }, { label: 'Province', value: 'Sindh' }].map(({ label, value }) => (
               <div key={label}>
                 <small style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
@@ -67,10 +72,10 @@ export default function AboutPage() {
       </div>
 
       {/* ── WHO WE ARE ── */}
-      <section style={{ background: 'var(--cream)', padding: '120px 64px' }}>
+      <section style={{ background: 'var(--cream)', padding: '120px 0' }}>
         <div className="container-custom">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '100px', alignItems: 'start' }}>
-            <AnimatedSection style={{ position: 'sticky', top: '100px' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-24 items-start">
+            <AnimatedSection className="lg:sticky lg:top-[100px]">
               <div className="eyebrow">Who We Are</div>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px, 4vw, 48px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                 A mission rooted in <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>compassion</em>.
@@ -98,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── MISSION & VISION ── */}
-      <section style={{ background: 'var(--paper)', padding: '120px 64px' }}>
+      <section style={{ background: 'var(--paper)', padding: '120px 0' }}>
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow">Our Purpose</div>
@@ -106,9 +111,9 @@ export default function AboutPage() {
               Mission &amp; <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>Vision</em>.
             </h2>
           </AnimatedSection>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden', marginBottom: '1px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden', marginBottom: '1px' }}>
             {/* Mission */}
-            <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: '56px 48px', position: 'relative' }}>
+            <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--a4)', marginBottom: '24px' }}>— 01 / MISSION</div>
               <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '34px', fontWeight: 400, color: '#fff', marginBottom: '24px', lineHeight: 1.1 }}>
@@ -124,7 +129,7 @@ export default function AboutPage() {
               </p>
             </AnimatedSection>
             {/* Vision */}
-            <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: '56px 48px', position: 'relative' }}>
+            <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
               <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--a5)', marginBottom: '24px' }}>— 02 / VISION</div>
               <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '34px', fontWeight: 400, color: 'var(--g9)', marginBottom: '24px', lineHeight: 1.1 }}>
@@ -144,7 +149,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── CORE VALUES ── */}
-      <section style={{ background: 'var(--cream)', padding: '120px 64px' }}>
+      <section style={{ background: 'var(--cream)', padding: '120px 0' }}>
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow">Guiding Principles</div>
@@ -152,7 +157,7 @@ export default function AboutPage() {
               Our core <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>values</em>.
             </h2>
           </AnimatedSection>
-          <AnimatedStagger style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden' }}>
+          <AnimatedStagger className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden' }}>
             {values.map(({ num, title, desc }) => (
               <StaggerItem key={title}>
                 <div style={{ background: 'var(--g9)', padding: '48px 36px', height: '100%' }}>
@@ -167,7 +172,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── LEADERSHIP ── */}
-      <section style={{ background: 'var(--g9)', padding: '120px 64px', color: '#fff' }}>
+      <section style={{ background: 'var(--g9)', padding: '120px 0', color: '#fff' }}>
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>Leadership</div>
@@ -176,7 +181,7 @@ export default function AboutPage() {
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '80px', alignItems: 'start' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-20 items-start">
               {/* Fact table */}
               <div style={{ border: '1px solid rgba(212,160,23,.2)', borderRadius: '2px', overflow: 'hidden' }}>
                 <div style={{ background: 'var(--a5)', padding: '20px 24px' }}>
@@ -220,7 +225,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── WHY SCWO ── */}
-      <section style={{ background: 'var(--paper)', padding: '120px 64px' }}>
+      <section style={{ background: 'var(--paper)', padding: '120px 0' }}>
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow">Why Choose SCWO</div>
@@ -228,7 +233,7 @@ export default function AboutPage() {
               Our commitment <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>to you</em>.
             </h2>
           </AnimatedSection>
-          <AnimatedStagger style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden' }}>
+          <AnimatedStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden' }}>
             {whyChoose.map((item, i) => (
               <StaggerItem key={item}>
                 <div style={{ background: '#fff', padding: '32px 28px', display: 'flex', gap: '16px', alignItems: 'flex-start', height: '100%' }}>

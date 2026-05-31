@@ -7,6 +7,11 @@ import DonationCTA from '@/components/sections/DonationCTA';
 export const metadata: Metadata = {
   title: 'Our Programs | SCWO Welfare Programs Across Sindh',
   description: 'Explore SCWO humanitarian programs including ambulance services, education, women empowerment, legal aid, and social welfare initiatives across Sindh.',
+  openGraph: {
+    title: 'Our Programs | SCWO Welfare Programs Across Sindh',
+    description: 'Explore SCWO humanitarian programs — healthcare, education, women empowerment, legal aid, and welfare across Sindh.',
+    url: 'https://sindhcitizenwelfare.org/projects',
+  },
 };
 
 const programs = [
@@ -28,7 +33,7 @@ export default function ProjectsPage() {
       `}</style>
 
       {/* ── HERO ── */}
-      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 64px 120px', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'var(--g9)', color: '#fff', padding: '100px 0 120px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 75% 30%, rgba(212,160,23,.12) 0%, transparent 55%)', pointerEvents: 'none' }} />
         <div className="container-custom" style={{ position: 'relative' }}>
           <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>What We Do</div>
@@ -39,7 +44,7 @@ export default function ProjectsPage() {
             SCWO operates seven humanitarian programs designed to support communities across Sindh through
             healthcare, education, women empowerment, legal aid, and social welfare services.
           </p>
-          <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)' }}>
+          <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)', flexWrap: 'wrap' }}>
             {[{ label: 'Programs', value: '07 Active' }, { label: 'Coverage', value: 'Sindh' }, { label: 'Since', value: '2024' }].map(({ label, value }) => (
               <div key={label}>
                 <small style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
@@ -51,7 +56,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* ── PROGRAMS GRID ── */}
-      <section style={{ background: 'var(--g9)', padding: '0 64px 120px' }}>
+      <section style={{ background: 'var(--g9)', padding: '0 0 120px' }}>
         <div className="container-custom">
           <AnimatedSection>
             <div style={{ padding: '32px 0', borderBottom: '1px solid rgba(255,255,255,.08)', marginBottom: '64px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
@@ -62,7 +67,7 @@ export default function ProjectsPage() {
             </div>
           </AnimatedSection>
 
-          <AnimatedStagger style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'rgba(255,255,255,.08)', borderRadius: '2px', overflow: 'hidden' }}>
+          <AnimatedStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '1px', background: 'rgba(255,255,255,.08)', borderRadius: '2px', overflow: 'hidden' }}>
             {programs.map(({ num, emoji, slug, title, category, desc, keywords }) => (
               <StaggerItem key={slug}>
                 <Link href={`/projects/${slug}`} className="prog-card-link">
