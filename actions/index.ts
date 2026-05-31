@@ -18,6 +18,11 @@ export async function getGalleryItems(category?: string) {
   return Gallery.find(filter).sort({ eventDate: -1 }).lean();
 }
 
+export async function getGalleryItemBySlug(slug: string) {
+  await connectDB();
+  return Gallery.findOne({ slug, published: true }).lean();
+}
+
 export async function getAllGalleryItems() {
   await connectDB();
   return Gallery.find().sort({ createdAt: -1 }).lean();
