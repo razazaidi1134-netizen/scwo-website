@@ -4,15 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react';
+import { LayoutDashboard, FileText, Image as ImageIcon, Users, DollarSign, Mail, Settings, LogOut, ExternalLink } from 'lucide-react';
 
 const navItems = [
-  { href: '/admin/dashboard',  label: 'Dashboard',  icon: '◈' },
-  { href: '/admin/programs',   label: 'Programs',   icon: '📋' },
-  { href: '/admin/gallery',    label: 'Gallery',    icon: '🖼' },
-  { href: '/admin/team',       label: 'Team',       icon: '👥' },
-  { href: '/admin/donations',  label: 'Donations',  icon: '💰' },
-  { href: '/admin/messages',   label: 'Messages',   icon: '✉' },
-  { href: '/admin/settings',   label: 'Settings',   icon: '⚙' },
+  { href: '/admin/dashboard',  label: 'Dashboard',  icon: LayoutDashboard },
+  { href: '/admin/programs',   label: 'Programs',   icon: FileText },
+  { href: '/admin/gallery',    label: 'Gallery',    icon: ImageIcon },
+  { href: '/admin/team',       label: 'Team',       icon: Users },
+  { href: '/admin/donations',  label: 'Donations',  icon: DollarSign },
+  { href: '/admin/messages',   label: 'Messages',   icon: Mail },
+  { href: '/admin/settings',   label: 'Settings',   icon: Settings },
 ];
 
 export default function AdminSidebar() {
@@ -41,7 +42,7 @@ export default function AdminSidebar() {
 
       {/* Nav */}
       <nav style={{ flex: 1, padding: '16px 12px', display: 'flex', flexDirection: 'column', gap: '2px' }}>
-        {navItems.map(({ href, label, icon }) => {
+        {navItems.map(({ href, label, icon: NavIcon }) => {
           const active = pathname === href || pathname.startsWith(href + '/');
           return (
             <Link key={href} href={href} style={{
@@ -54,7 +55,7 @@ export default function AdminSidebar() {
               fontSize: '14px',
               transition: 'all .15s',
             }}>
-              <span style={{ fontSize: '16px', lineHeight: 1 }}>{icon}</span>
+              <NavIcon className="w-4 h-4" />
               {label}
             </Link>
           );
@@ -68,7 +69,7 @@ export default function AdminSidebar() {
           borderRadius: '2px', textDecoration: 'none', color: 'rgba(255,255,255,.5)',
           fontSize: '13px', marginBottom: '4px',
         }}>
-          <span>↗</span> View Website
+          <ExternalLink className="w-4 h-4" /> View Website
         </Link>
         <button onClick={() => signOut({ callbackUrl: '/admin/login' })} style={{
           display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 16px',
@@ -76,7 +77,7 @@ export default function AdminSidebar() {
           color: 'rgba(255,255,255,.5)', fontSize: '13px', cursor: 'pointer',
           width: '100%', textAlign: 'left',
         }}>
-          <span>⎋</span> Sign Out
+          <LogOut className="w-4 h-4" /> Sign Out
         </button>
       </div>
     </aside>

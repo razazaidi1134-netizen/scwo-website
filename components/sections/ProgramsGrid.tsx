@@ -3,12 +3,13 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import { HeartPulse, GraduationCap, Wheat, Users, Scale, Waves, HandHeart } from 'lucide-react';
 
 const programs = [
   {
     slug: 'ambulance-health',
     num: '01',
-    icon: '🏥',
+    icon: HeartPulse,
     title: 'Healthcare Hub',
     desc: 'Emergency healthcare support and ambulance services for underprivileged communities across Sindh.',
     img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80',
@@ -16,7 +17,7 @@ const programs = [
   {
     slug: 'educational-centers',
     num: '02',
-    icon: '🎓',
+    icon: GraduationCap,
     title: 'Education Hub',
     desc: 'Educational support programs for deserving students and underprivileged communities across Sindh.',
     img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80',
@@ -24,7 +25,7 @@ const programs = [
   {
     slug: 'computer-training',
     num: '03',
-    icon: '💻',
+    icon: Wheat,
     title: 'Computer Training',
     desc: 'Digital skills and computer education programs for students and youth seeking modern employment.',
     img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80',
@@ -32,7 +33,7 @@ const programs = [
   {
     slug: 'women-works-hub',
     num: '04',
-    icon: '👩‍💼',
+    icon: Users,
     title: 'Women Works Hub',
     desc: 'Vocational training and skill-building programs helping women achieve financial independence.',
     img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80',
@@ -40,7 +41,7 @@ const programs = [
   {
     slug: 'legal-aid-hub',
     num: '05',
-    icon: '⚖️',
+    icon: Scale,
     title: 'Legal Aid Hub',
     desc: 'Legal awareness and free advisory support for underprivileged communities across Sindh.',
     img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80',
@@ -48,7 +49,7 @@ const programs = [
   {
     slug: 'industrial-homes',
     num: '06',
-    icon: '✂️',
+    icon: Waves,
     title: 'Industrial Homes',
     desc: 'Vocational training helping women build sustainable income through sewing and handicrafts.',
     img: 'https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=900&q=80',
@@ -56,7 +57,7 @@ const programs = [
   {
     slug: 'social-welfare',
     num: '07',
-    icon: '🤝',
+    icon: HandHeart,
     title: 'Social Welfare',
     desc: 'Support services for widows, orphans, elderly citizens, and deserving families in Sindh.',
     img: 'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80',
@@ -102,8 +103,9 @@ export default function ProgramsGrid() {
             overflow: 'hidden',
           }}
         >
-          {programs.map((program, i) => (
-            <motion.div
+          {programs.map((program, i) => {
+            const ProgramIcon = program.icon;
+            return (<motion.div
               key={program.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -144,23 +146,11 @@ export default function ProgramsGrid() {
                   </span>
                 </div>
 
-                {/* Icon bubble */}
-                <div
-                  className="absolute z-10 flex items-center justify-center"
-                  style={{
-                    bottom: -24, right: 24,
-                    width: 52, height: 52,
-                    background: 'var(--a5)',
-                    borderRadius: '50%',
-                    fontSize: 22,
-                    border: '4px solid var(--g9)',
-                  }}
-                >
-                  {program.icon}
-                </div>
-
                 {/* Body */}
-                <div style={{ padding: '36px 28px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <div style={{ padding: '28px 28px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--a5)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
+                    <ProgramIcon className="w-5 h-5" style={{ color: 'var(--g9)' }} />
+                  </div>
                   <h3
                     style={{
                       fontFamily: 'var(--font-fraunces), serif',
@@ -178,8 +168,8 @@ export default function ProgramsGrid() {
                   <span className="prog-arrow">→</span>
                 </div>
               </Link>
-            </motion.div>
-          ))}
+            </motion.div>);
+          })}
 
           {/* CTA tile */}
           <motion.div

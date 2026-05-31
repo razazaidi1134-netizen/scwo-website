@@ -2,23 +2,24 @@
 
 import Link from 'next/link';
 import AnimatedSection, { AnimatedStagger, StaggerItem } from '@/components/ui/AnimatedSection';
+import { HandHeart, Megaphone, Sprout } from 'lucide-react';
 
 const roles = [
   {
     num: '01',
-    emoji: '🤝',
+    icon: HandHeart,
     title: 'Welfare Activities',
     desc: 'Join our field teams in food drives, healthcare camps, and community support programs across Sindh.',
   },
   {
     num: '02',
-    emoji: '📢',
+    icon: Megaphone,
     title: 'Awareness Campaigns',
     desc: 'Help spread awareness about SCWO programs and humanitarian initiatives through outreach and events.',
   },
   {
     num: '03',
-    emoji: '🌱',
+    icon: Sprout,
     title: 'Community Development',
     desc: 'Contribute to long-term development programs that uplift underprivileged communities and create lasting change.',
   },
@@ -74,7 +75,7 @@ export default function VolunteerSection() {
 
           {/* Right — role cards */}
           <AnimatedStagger style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden' }}>
-            {roles.map(({ num, emoji, title, desc }) => (
+            {roles.map(({ num, icon: RoleIcon, title, desc }) => (
               <StaggerItem key={title}>
                 <div style={{
                   background: '#fff',
@@ -102,8 +103,7 @@ export default function VolunteerSection() {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: '24px',
-                    }}>{emoji}</div>
+                    }}><RoleIcon className="w-6 h-6" style={{ color: 'var(--a5)' }} /></div>
                   </div>
 
                   <div>

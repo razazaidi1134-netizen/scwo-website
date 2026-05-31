@@ -2,60 +2,71 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import { HeartPulse, GraduationCap, Monitor, Scissors, Briefcase, Scale, Shield } from 'lucide-react';
 
 const programs: Record<string, {
-  num: string; emoji: string; title: string; category: string;
+  num: string; title: string; category: string;
   description: string; about: string; whatWeDo: string[]; seoKeywords: string;
 }> = {
   'ambulance-health': {
-    num: '01', emoji: '🏥', title: 'Ambulance & Health Services', category: 'Healthcare',
+    num: '01', title: 'Ambulance & Health Services', category: 'Healthcare',
     description: 'Emergency healthcare support and ambulance services for underprivileged communities across Sindh.',
     about: 'Thousands of deserving patients face medical emergencies without access to immediate transportation or healthcare support. SCWO aims to bridge this gap by providing ambulance services, emergency response assistance, and healthcare support for vulnerable individuals and families.',
     whatWeDo: ['Ambulance services for deserving communities', 'Emergency response assistance', 'Healthcare support for vulnerable families', 'Medical assistance for individuals in need'],
     seoKeywords: 'ambulance services Karachi · healthcare NGO Pakistan · emergency welfare services Sindh',
   },
   'educational-centers': {
-    num: '02', emoji: '🎓', title: 'Educational Centers', category: 'Education',
+    num: '02', title: 'Educational Centers', category: 'Education',
     description: 'Educational support programs for deserving students and underprivileged communities.',
     about: 'SCWO promotes quality education through model schools, coaching centers, mentorship programs, and academic support initiatives designed to help students achieve their educational goals.',
     whatWeDo: ['Model schools and coaching centers', 'Mentorship programs for students', 'Academic support initiatives', 'Educational resources for underprivileged youth'],
     seoKeywords: 'education NGO Karachi · student support Sindh · welfare education programs Pakistan',
   },
   'computer-training': {
-    num: '03', emoji: '💻', title: 'Computer Training Centers', category: 'Digital Skills',
+    num: '03', title: 'Computer Training Centers', category: 'Digital Skills',
     description: 'Digital skills and computer education programs for students and youth.',
     about: 'SCWO provides computer training and digital literacy programs including typing, internet usage, MS Office, and communication skills to help students build better career opportunities.',
     whatWeDo: ['Computer literacy and typing training', 'Internet usage and MS Office programs', 'Communication skills development', 'Career-oriented digital skills for youth'],
     seoKeywords: 'computer training Karachi · digital skills Pakistan · youth empowerment NGO',
   },
   'industrial-homes': {
-    num: '04', emoji: '✂️', title: 'Industrial Homes for Women', category: 'Women Empowerment',
+    num: '04', title: 'Industrial Homes for Women', category: 'Women Empowerment',
     description: 'Vocational training programs helping women achieve financial independence.',
     about: 'SCWO empowers women through sewing, embroidery, handicrafts, and vocational training programs designed to help women build sustainable sources of income.',
     whatWeDo: ['Sewing and embroidery training', 'Handicrafts skill development', 'Vocational training programs', 'Building sustainable income sources for women'],
     seoKeywords: 'women empowerment NGO Pakistan · vocational training Karachi · sewing training Sindh',
   },
   'women-works-hub': {
-    num: '05', emoji: '👩‍💼', title: 'Women Works Hub', category: 'Women Empowerment',
+    num: '05', title: 'Women Works Hub', category: 'Women Empowerment',
     description: 'Practical skill-building programs for women seeking employment or entrepreneurship opportunities.',
     about: 'The Women Works Hub focuses on providing practical career-oriented skills including beauty services, handicrafts, computer skills, and entrepreneurship training.',
     whatWeDo: ['Beauty services and cosmetology training', 'Handicrafts and creative skills', 'Computer skills for women', 'Entrepreneurship training and support'],
     seoKeywords: 'women employment programs Pakistan · women skills training Karachi · NGO for women empowerment',
   },
   'legal-aid-hub': {
-    num: '06', emoji: '⚖️', title: 'Legal Aid Hub', category: 'Legal Aid',
+    num: '06', title: 'Legal Aid Hub', category: 'Legal Aid',
     description: 'Legal awareness and advisory support for underprivileged communities.',
     about: 'SCWO promotes legal awareness through counseling, advisory services, awareness campaigns, and partnerships with volunteers and legal professionals.',
     whatWeDo: ['Free legal counseling and advisory services', 'Legal awareness campaigns', 'Partnerships with legal professionals', 'Legal support for vulnerable individuals'],
     seoKeywords: 'legal aid NGO Pakistan · legal awareness Karachi · welfare legal services Sindh',
   },
   'social-welfare': {
-    num: '07', emoji: '🤝', title: 'Social Welfare Services', category: 'Social Welfare',
+    num: '07', title: 'Social Welfare Services', category: 'Social Welfare',
     description: 'Support services for widows, orphans, students, elderly citizens, and deserving families.',
     about: 'SCWO provides welfare support including food assistance, educational help, healthcare support, and essential services for vulnerable individuals and families facing hardship.',
     whatWeDo: ['Food assistance for deserving families', 'Educational help for students in need', 'Healthcare support for vulnerable communities', 'Essential services for widows, orphans, and elderly citizens'],
     seoKeywords: 'social welfare organization Karachi · charity support Sindh · humanitarian NGO Pakistan',
   },
+};
+
+const iconMap = {
+  'ambulance-health': HeartPulse,
+  'educational-centers': GraduationCap,
+  'computer-training': Monitor,
+  'industrial-homes': Scissors,
+  'women-works-hub': Briefcase,
+  'legal-aid-hub': Scale,
+  'social-welfare': Shield,
 };
 
 export function generateStaticParams() {
@@ -79,6 +90,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function ProjectDetailPage({ params }: { params: { slug: string } }) {
   const program = programs[params.slug];
   if (!program) notFound();
+  const Icon = iconMap[params.slug as keyof typeof iconMap] || HeartPulse;
   const slugList = Object.keys(programs);
 
   return (
@@ -97,8 +109,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px', flexWrap: 'wrap' }}>
             <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '12px', letterSpacing: '0.15em', color: 'var(--a4)' }}>{program.num}</span>
-            <div style={{ width: '56px', height: '56px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', border: '3px solid rgba(212,160,23,.3)' }}>
-              {program.emoji}
+            <div style={{ width: '56px', height: '56px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '3px solid rgba(212,160,23,.3)' }}>
+              <Icon className="w-6 h-6" style={{ color: 'var(--g9)' }} />
             </div>
             <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)' }}>{program.category}</span>
           </div>
@@ -202,10 +214,11 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                   {slugList.map((slug) => {
                     const p = programs[slug];
                     const isActive = slug === params.slug;
+                    const NavIcon = iconMap[slug as keyof typeof iconMap] || HeartPulse;
                     return (
                       <Link key={slug} href={`/projects/${slug}`}
                         className={`prog-nav-link${isActive ? ' active' : ''}`}>
-                        <span style={{ fontSize: '14px' }}>{p.emoji}</span>
+                        <NavIcon className="w-4 h-4" style={{ flexShrink: 0 }} />
                         <span style={{ fontSize: '13px', color: isActive ? '#fff' : 'var(--soft)', fontWeight: isActive ? 600 : 400, lineHeight: 1.4 }}>{p.title}</span>
                         {isActive && <span style={{ marginLeft: 'auto', color: 'var(--a4)', fontSize: '12px' }}>●</span>}
                       </Link>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import { Users } from 'lucide-react';
 
 const highlights = [
   'Sewing, embroidery & handicrafts vocational training',
@@ -45,11 +46,11 @@ export default function WomenEmpowerment() {
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -60%)',
-                fontSize: '120px',
-                opacity: 0.15,
+                opacity: 0.08,
                 zIndex: 0,
-                userSelect: 'none',
-              }}>👩</div>
+              }}>
+                <Users style={{ width: 120, height: 120, color: 'var(--a4)' }} />
+              </div>
               <div style={{ position: 'relative', zIndex: 2, padding: '32px' }}>
                 <div style={{
                   fontFamily: 'var(--font-mono), monospace',

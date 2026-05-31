@@ -2,6 +2,7 @@
 
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import { motion } from 'framer-motion';
+import { HeartPulse, GraduationCap, Users, Scale } from 'lucide-react';
 
 const counters = [
   { num: '7',     suffix: '',  label: 'Active Welfare Programs' },
@@ -12,22 +13,22 @@ const counters = [
 
 const impacts = [
   {
-    icon: '🏥',
+    icon: HeartPulse,
     title: 'Healthcare Support',
     desc: 'Providing emergency medical assistance and ambulance support for deserving communities across Sindh.',
   },
   {
-    icon: '📚',
+    icon: GraduationCap,
     title: 'Education & Digital Skills',
     desc: 'Supporting students through educational centers, coaching programs, and digital training initiatives.',
   },
   {
-    icon: '👩‍💼',
+    icon: Users,
     title: 'Women Empowerment',
     desc: 'Helping women gain vocational skills, financial independence, and sustainable livelihood opportunities.',
   },
   {
-    icon: '⚖️',
+    icon: Scale,
     title: 'Legal & Social Welfare',
     desc: 'Providing legal awareness, social support, and welfare assistance for vulnerable families.',
   },
@@ -116,15 +117,15 @@ export default function ImpactCards() {
               style={{ borderTop: '3px solid var(--a5)' }}
             >
               <div
-                className="flex items-center justify-center mb-5"
                 style={{
-                  width: 52, height: 52,
-                  background: 'var(--a1)',
-                  borderRadius: 2,
-                  fontSize: 24,
+                  width: 56, height: 56,
+                  background: 'rgba(212,160,23,0.12)',
+                  borderRadius: '50%',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: 16,
                 }}
               >
-                {item.icon}
+                <item.icon className="w-7 h-7" style={{ color: 'var(--a5)' }} />
               </div>
               <h3
                 style={{

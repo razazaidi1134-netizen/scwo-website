@@ -1,13 +1,14 @@
 import Link from 'next/link';
+import { HeartPulse, GraduationCap, Wheat, Users, Scale, Waves, HandHeart } from 'lucide-react';
 
 const programs = [
-  { num: '01', emoji: '🏥', slug: 'ambulance-health',    title: 'Healthcare Hub',             desc: 'Free medical camps, medicines, and specialist referrals for underprivileged families across Sindh.' },
-  { num: '02', emoji: '🎓', slug: 'educational-centers', title: 'Education Hub',               desc: 'Scholarships, school supplies, tutoring, and computer literacy programs for disadvantaged youth.' },
-  { num: '03', emoji: '🌾', slug: 'computer-training',   title: 'Food Relief Hub',             desc: 'Monthly ration distribution, Ramzan food packs, and emergency food aid for families in crisis.' },
-  { num: '04', emoji: '👩', slug: 'industrial-homes',    title: 'Women Works Hub',             desc: 'Sewing, embroidery, and vocational skills training that leads to employment or entrepreneurship.' },
-  { num: '05', emoji: '⚖️', slug: 'legal-aid-hub',       title: 'Legal Aid Hub',               desc: 'Free legal counseling, family law awareness, inheritance rights, and referrals with partner advocates.' },
-  { num: '06', emoji: '🌊', slug: 'social-welfare',      title: 'Flood Relief',                desc: 'Emergency response, shelter support, and rehabilitation for flood-affected families across Sindh.' },
-  { num: '07', emoji: '🤝', slug: 'women-works-hub',     title: 'Social Welfare',              desc: 'Community support, welfare assistance, and social development programs for vulnerable families.' },
+  { num: '01', icon: HeartPulse,    slug: 'ambulance-health',    title: 'Healthcare Hub',             desc: 'Free medical camps, medicines, and specialist referrals for underprivileged families across Sindh.' },
+  { num: '02', icon: GraduationCap, slug: 'educational-centers', title: 'Education Hub',               desc: 'Scholarships, school supplies, tutoring, and computer literacy programs for disadvantaged youth.' },
+  { num: '03', icon: Wheat,         slug: 'computer-training',   title: 'Food Relief Hub',             desc: 'Monthly ration distribution, Ramzan food packs, and emergency food aid for families in crisis.' },
+  { num: '04', icon: Users,         slug: 'industrial-homes',    title: 'Women Works Hub',             desc: 'Sewing, embroidery, and vocational skills training that leads to employment or entrepreneurship.' },
+  { num: '05', icon: Scale,         slug: 'legal-aid-hub',       title: 'Legal Aid Hub',               desc: 'Free legal counseling, family law awareness, inheritance rights, and referrals with partner advocates.' },
+  { num: '06', icon: Waves,         slug: 'social-welfare',      title: 'Flood Relief',                desc: 'Emergency response, shelter support, and rehabilitation for flood-affected families across Sindh.' },
+  { num: '07', icon: HandHeart,     slug: 'women-works-hub',     title: 'Social Welfare',              desc: 'Community support, welfare assistance, and social development programs for vulnerable families.' },
 ];
 
 export default function ProjectsPreview() {
@@ -32,10 +33,10 @@ export default function ProjectsPreview() {
 
         {/* Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'rgba(255,255,255,.08)', borderRadius: '2px', overflow: 'hidden', marginBottom: '1px' }}>
-          {programs.map(({ num, emoji, slug, title, desc }) => (
+          {programs.map(({ num, icon: ProgramIcon, slug, title, desc }) => (
             <Link key={slug} href={`/projects/${slug}`} className="prog-preview-card">
               <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: 'var(--a4)', letterSpacing: '0.15em', marginBottom: '16px' }}>{num}</span>
-              <div style={{ width: '48px', height: '48px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', marginBottom: '20px', border: '3px solid var(--g9)' }}>{emoji}</div>
+              <div style={{ width: '48px', height: '48px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '3px solid var(--g9)' }}><ProgramIcon className="w-5 h-5" style={{ color: 'var(--g9)' }} /></div>
               <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>{title}</h3>
               <p style={{ color: 'rgba(255,255,255,.6)', fontSize: '13px', lineHeight: 1.65, flex: 1 }}>{desc}</p>
               <span style={{ marginTop: '16px', fontSize: '15px', color: 'var(--a5)', alignSelf: 'flex-start' }}>Learn more →</span>

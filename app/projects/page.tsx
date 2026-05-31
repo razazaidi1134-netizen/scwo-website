@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { AnimatedStagger, StaggerItem } from '@/components/ui/AnimatedSection';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import DonationCTA from '@/components/sections/DonationCTA';
+import { HeartPulse, GraduationCap, Monitor, Scissors, Briefcase, Scale, Shield } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Our Programs | SCWO Welfare Programs Across Sindh',
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
 };
 
 const programs = [
-  { num: '01', emoji: '🏥', slug: 'ambulance-health',    title: 'Ambulance & Health Services', category: 'Healthcare',         desc: 'Emergency healthcare support and ambulance services for underprivileged communities across Sindh.',        keywords: 'ambulance services Karachi · healthcare NGO Pakistan · emergency welfare Sindh' },
-  { num: '02', emoji: '🎓', slug: 'educational-centers', title: 'Educational Centers',          category: 'Education',          desc: 'Educational support programs for deserving students and underprivileged communities across Sindh.',        keywords: 'education NGO Karachi · student support Sindh · welfare education Pakistan' },
-  { num: '03', emoji: '💻', slug: 'computer-training',   title: 'Computer Training Centers',    category: 'Digital Skills',     desc: 'Digital skills and computer education programs for students and youth seeking modern employment.',         keywords: 'computer training Karachi · digital skills Pakistan · youth empowerment NGO' },
-  { num: '04', emoji: '✂️', slug: 'industrial-homes',    title: 'Industrial Homes for Women',   category: 'Women Empowerment',  desc: 'Vocational training programs helping women achieve financial independence through sewing and handicrafts.',  keywords: 'women empowerment NGO Pakistan · vocational training Karachi · sewing training Sindh' },
-  { num: '05', emoji: '👩‍💼',slug: 'women-works-hub',    title: 'Women Works Hub',              category: 'Women Empowerment',  desc: 'Practical skill-building programs for women seeking employment or entrepreneurship opportunities.',         keywords: 'women employment Pakistan · women skills training Karachi · NGO for women' },
-  { num: '06', emoji: '⚖️', slug: 'legal-aid-hub',       title: 'Legal Aid Hub',                category: 'Legal Aid',          desc: 'Legal awareness and free advisory support for underprivileged communities across Sindh.',                 keywords: 'legal aid NGO Pakistan · legal awareness Karachi · welfare legal services Sindh' },
-  { num: '07', emoji: '🤝', slug: 'social-welfare',      title: 'Social Welfare Services',      category: 'Social Welfare',     desc: 'Support services for widows, orphans, students, elderly citizens, and deserving families.',               keywords: 'social welfare organization Karachi · charity support Sindh · humanitarian NGO Pakistan' },
+  { num: '01', icon: HeartPulse,    slug: 'ambulance-health',    title: 'Ambulance & Health Services', category: 'Healthcare',         desc: 'Emergency healthcare support and ambulance services for underprivileged communities across Sindh.',        keywords: 'ambulance services Karachi · healthcare NGO Pakistan · emergency welfare Sindh' },
+  { num: '02', icon: GraduationCap, slug: 'educational-centers', title: 'Educational Centers',          category: 'Education',          desc: 'Educational support programs for deserving students and underprivileged communities across Sindh.',        keywords: 'education NGO Karachi · student support Sindh · welfare education Pakistan' },
+  { num: '03', icon: Monitor,       slug: 'computer-training',   title: 'Computer Training Centers',    category: 'Digital Skills',     desc: 'Digital skills and computer education programs for students and youth seeking modern employment.',         keywords: 'computer training Karachi · digital skills Pakistan · youth empowerment NGO' },
+  { num: '04', icon: Scissors,      slug: 'industrial-homes',    title: 'Industrial Homes for Women',   category: 'Women Empowerment',  desc: 'Vocational training programs helping women achieve financial independence through sewing and handicrafts.',  keywords: 'women empowerment NGO Pakistan · vocational training Karachi · sewing training Sindh' },
+  { num: '05', icon: Briefcase,     slug: 'women-works-hub',     title: 'Women Works Hub',              category: 'Women Empowerment',  desc: 'Practical skill-building programs for women seeking employment or entrepreneurship opportunities.',         keywords: 'women employment Pakistan · women skills training Karachi · NGO for women' },
+  { num: '06', icon: Scale,         slug: 'legal-aid-hub',       title: 'Legal Aid Hub',                category: 'Legal Aid',          desc: 'Legal awareness and free advisory support for underprivileged communities across Sindh.',                 keywords: 'legal aid NGO Pakistan · legal awareness Karachi · welfare legal services Sindh' },
+  { num: '07', icon: Shield,        slug: 'social-welfare',      title: 'Social Welfare Services',      category: 'Social Welfare',     desc: 'Support services for widows, orphans, students, elderly citizens, and deserving families.',               keywords: 'social welfare organization Karachi · charity support Sindh · humanitarian NGO Pakistan' },
 ];
 
 export default function ProjectsPage() {
@@ -68,14 +69,14 @@ export default function ProjectsPage() {
           </AnimatedSection>
 
           <AnimatedStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: '1px', background: 'rgba(255,255,255,.08)', borderRadius: '2px', overflow: 'hidden' }}>
-            {programs.map(({ num, emoji, slug, title, category, desc, keywords }) => (
+            {programs.map(({ num, icon: ProgramIcon, slug, title, category, desc, keywords }) => (
               <StaggerItem key={slug}>
                 <Link href={`/projects/${slug}`} className="prog-card-link">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
                     <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', color: 'var(--a4)', letterSpacing: '0.15em' }}>{num}</span>
                     <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '9px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g9)', background: 'var(--a5)', padding: '3px 10px', borderRadius: '2px' }}>{category}</span>
                   </div>
-                  <div style={{ width: '52px', height: '52px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', marginBottom: '20px', border: '3px solid var(--g9)' }}>{emoji}</div>
+                  <div style={{ width: '52px', height: '52px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px', border: '3px solid var(--g9)' }}><ProgramIcon className="w-5 h-5" style={{ color: 'var(--g9)' }} /></div>
                   <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>{title}</h3>
                   <p style={{ color: 'rgba(255,255,255,.6)', fontSize: '13px', lineHeight: 1.65, flex: 1, marginBottom: '12px' }}>{desc}</p>
                   <span aria-hidden="true" style={{ display: 'none' }}>{keywords}</span>
