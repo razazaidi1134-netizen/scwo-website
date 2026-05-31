@@ -4,14 +4,14 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 
 export default function MissionVision() {
   return (
-    <section style={{ background: 'var(--paper)', padding: '120px 64px' }}>
+    <section style={{ background: 'var(--paper)', padding: '120px 0' }}>
       <div className="container-custom">
 
         {/* Section header */}
         <AnimatedSection style={{ marginBottom: '64px' }}>
           <div className="eyebrow">Our Purpose</div>
           <h2 style={{
-            fontFamily: "'Fraunces', serif",
+            fontFamily: 'var(--font-fraunces), serif',
             fontSize: 'clamp(40px, 5vw, 54px)',
             fontWeight: 400,
             color: 'var(--g9)',
@@ -23,13 +23,13 @@ export default function MissionVision() {
           </h2>
         </AnimatedSection>
 
-        {/* Mission + Vision grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden', marginBottom: '1px' }}>
+        {/* Mission + Vision — stack on mobile, side-by-side on md+ */}
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden', marginBottom: '1px' }}>
 
           {/* Mission */}
-          <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: '56px 48px', position: 'relative', overflow: 'hidden' }}>
+          <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative', overflow: 'hidden' }}>
             <div style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: 'var(--font-mono), monospace',
               fontSize: '11px',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
@@ -37,7 +37,7 @@ export default function MissionVision() {
               marginBottom: '24px',
             }}>— 01 / MISSION</div>
             <h3 style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: 'var(--font-fraunces), serif',
               fontSize: '36px',
               fontWeight: 400,
               color: '#fff',
@@ -57,14 +57,13 @@ export default function MissionVision() {
               families, empowering youth, and building stronger communities through
               compassion, awareness, and action.
             </p>
-            {/* Gold accent bar */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
           </AnimatedSection>
 
           {/* Vision */}
-          <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: '56px 48px', position: 'relative', overflow: 'hidden' }}>
+          <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative', overflow: 'hidden' }}>
             <div style={{
-              fontFamily: "'JetBrains Mono', monospace",
+              fontFamily: 'var(--font-mono), monospace',
               fontSize: '11px',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
@@ -72,7 +71,7 @@ export default function MissionVision() {
               marginBottom: '24px',
             }}>— 02 / VISION</div>
             <h3 style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: 'var(--font-fraunces), serif',
               fontSize: '36px',
               fontWeight: 400,
               color: 'var(--g9)',
@@ -91,24 +90,24 @@ export default function MissionVision() {
               healthcare, legal support, and opportunities for personal and economic
               growth.
             </p>
-            {/* Gold accent bar */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
           </AnimatedSection>
         </div>
 
-        {/* Core values — table row style */}
+        {/* Core values — 1 col mobile, 3 col sm+ */}
         <AnimatedSection delay={0.3}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '1px',
-            background: 'var(--line)',
-            borderRadius: '2px',
-            overflow: 'hidden',
-          }}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3"
+            style={{
+              gap: '1px',
+              background: 'var(--line)',
+              borderRadius: '2px',
+              overflow: 'hidden',
+            }}
+          >
             {[
-              { num: '01', value: 'Faith', sub: 'Unwavering belief in humanity' },
-              { num: '02', value: 'Unity', sub: 'Bringing communities together' },
+              { num: '01', value: 'Faith',      sub: 'Unwavering belief in humanity' },
+              { num: '02', value: 'Unity',      sub: 'Bringing communities together' },
               { num: '03', value: 'Discipline', sub: 'Accountability & transparency' },
             ].map(({ num, value, sub }) => (
               <div key={value} style={{
@@ -119,14 +118,14 @@ export default function MissionVision() {
                 gap: '8px',
               }}>
                 <span style={{
-                  fontFamily: "'JetBrains Mono', monospace",
+                  fontFamily: 'var(--font-mono), monospace',
                   fontSize: '11px',
                   letterSpacing: '0.15em',
                   color: 'var(--a4)',
                   textTransform: 'uppercase',
                 }}>{num}</span>
                 <span style={{
-                  fontFamily: "'Fraunces', serif",
+                  fontFamily: 'var(--font-fraunces), serif',
                   fontSize: '32px',
                   fontWeight: 400,
                   color: '#fff',

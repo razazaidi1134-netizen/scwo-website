@@ -43,7 +43,7 @@ export default function ImpactCards() {
         className="absolute pointer-events-none select-none"
         style={{
           top: 50, right: -40,
-          fontFamily: 'Fraunces, serif',
+          fontFamily: 'var(--font-fraunces), serif',
           fontSize: 'clamp(120px, 18vw, 220px)',
           fontWeight: 700,
           color: 'rgba(15,76,53,.04)',
@@ -63,7 +63,7 @@ export default function ImpactCards() {
             <div className="eyebrow">Our Impact</div>
             <h2
               style={{
-                fontFamily: 'Fraunces, serif',
+                fontFamily: 'var(--font-fraunces), serif',
                 fontSize: 'clamp(36px, 4.5vw, 54px)',
                 fontWeight: 400,
                 margin: '20px 0 20px',
@@ -128,7 +128,7 @@ export default function ImpactCards() {
               </div>
               <h3
                 style={{
-                  fontFamily: 'Fraunces, serif',
+                  fontFamily: 'var(--font-fraunces), serif',
                   fontSize: 18,
                   fontWeight: 500,
                   color: 'var(--g9)',
@@ -152,7 +152,7 @@ export default function ImpactCards() {
           >
             <p
               style={{
-                fontFamily: 'Fraunces, serif',
+                fontFamily: 'var(--font-fraunces), serif',
                 fontStyle: 'italic',
                 fontSize: 18,
                 color: 'var(--g8)',

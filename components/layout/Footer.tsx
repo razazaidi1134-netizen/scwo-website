@@ -54,8 +54,8 @@ export default function Footer() {
                   style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
               </div>
               <div>
-                <div style={{ fontFamily: "'Fraunces', serif", fontSize: 17, color: '#fff', fontWeight: 600 }}>SCWO</div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: '0.15em', color: 'var(--a4)', textTransform: 'uppercase' }}>
+                <div style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 17, color: '#fff', fontWeight: 600 }}>SCWO</div>
+                <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: '0.15em', color: 'var(--a4)', textTransform: 'uppercase' }}>
                   Humanity Comes First
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6 pt-5" style={{ borderTop: '1px solid rgba(255,255,255,.06)' }}>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,.3)', marginBottom: 10 }}>
+              <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: 10, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,.3)', marginBottom: 10 }}>
                 Follow Us
               </div>
               <FooterSocials socials={socials} variant="text" />
@@ -141,10 +141,10 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="py-5" style={{ borderTop: '1px solid rgba(255,255,255,.06)' }}>
         <div className="container-custom flex flex-col sm:flex-row justify-between items-center gap-2">
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.1em', color: 'rgba(255,255,255,.3)', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, letterSpacing: '0.1em', color: 'rgba(255,255,255,.3)', textTransform: 'uppercase' }}>
             © {new Date().getFullYear()} Sindh Citizen Welfare Organization · All Rights Reserved
           </span>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: '0.1em', color: 'rgba(255,255,255,.3)', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: 11, letterSpacing: '0.1em', color: 'rgba(255,255,255,.3)', textTransform: 'uppercase' }}>
             Humanity Comes First · Since 2024
           </span>
         </div>

@@ -26,16 +26,16 @@ const roles = [
 
 export default function VolunteerSection() {
   return (
-    <section style={{ background: 'var(--cream)', padding: '120px 64px' }}>
+    <section style={{ background: 'var(--cream)', padding: '120px 0' }}>
       <div className="container-custom">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '80px', alignItems: 'start' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-start">
 
-          {/* Left — sticky headline + CTA */}
-          <AnimatedSection style={{ position: 'sticky', top: '100px' }}>
+          {/* Left — headline + CTA */}
+          <AnimatedSection className="lg:sticky lg:top-[100px]">
             <div className="eyebrow">Get Involved</div>
             <h2 style={{
-              fontFamily: "'Fraunces', serif",
-              fontSize: 'clamp(40px, 4.5vw, 52px)',
+              fontFamily: 'var(--font-fraunces), serif',
+              fontSize: 'clamp(38px, 4.5vw, 52px)',
               fontWeight: 400,
               color: 'var(--g9)',
               margin: '20px 0 24px',
@@ -54,15 +54,15 @@ export default function VolunteerSection() {
             </p>
 
             {/* Stat pills */}
-            <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', paddingTop: '32px', borderTop: '1px solid var(--line)' }}>
+            <div style={{ display: 'flex', gap: '24px', marginBottom: '40px', paddingTop: '32px', borderTop: '1px solid var(--line)', flexWrap: 'wrap' }}>
               {[
-                { num: '7', label: 'Active Programs' },
-                { num: '2024', label: 'Est.' },
+                { num: '7',     label: 'Active Programs' },
+                { num: '2024',  label: 'Est.' },
                 { num: 'Sindh', label: 'Coverage' },
               ].map(({ num, label }) => (
                 <div key={label}>
-                  <div style={{ fontFamily: "'Fraunces', serif", fontSize: '28px', color: 'var(--a5)', lineHeight: 1 }}>{num}</div>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--g8)', marginTop: '4px' }}>{label}</div>
+                  <div style={{ fontFamily: 'var(--font-fraunces), serif', fontSize: '28px', color: 'var(--a5)', lineHeight: 1 }}>{num}</div>
+                  <div style={{ fontFamily: 'var(--font-mono), monospace', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--g8)', marginTop: '4px' }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -87,10 +87,9 @@ export default function VolunteerSection() {
                   onMouseEnter={e => (e.currentTarget.style.background = 'var(--paper)')}
                   onMouseLeave={e => (e.currentTarget.style.background = '#fff')}
                 >
-                  {/* Number + emoji */}
                   <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
                     <span style={{
-                      fontFamily: "'JetBrains Mono', monospace",
+                      fontFamily: 'var(--font-mono), monospace',
                       fontSize: '11px',
                       letterSpacing: '0.15em',
                       color: 'var(--a5)',
@@ -107,10 +106,9 @@ export default function VolunteerSection() {
                     }}>{emoji}</div>
                   </div>
 
-                  {/* Text */}
                   <div>
                     <h4 style={{
-                      fontFamily: "'Fraunces', serif",
+                      fontFamily: 'var(--font-fraunces), serif',
                       fontSize: '20px',
                       fontWeight: 500,
                       color: 'var(--g9)',
@@ -120,7 +118,6 @@ export default function VolunteerSection() {
                     <p style={{ fontSize: '14px', color: 'var(--soft)', lineHeight: 1.7 }}>{desc}</p>
                   </div>
 
-                  {/* Arrow */}
                   <div style={{ marginLeft: 'auto', color: 'var(--a5)', fontSize: '18px', flexShrink: 0, marginTop: '4px' }}>→</div>
                 </div>
               </StaggerItem>
@@ -133,10 +130,11 @@ export default function VolunteerSection() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
+              flexWrap: 'wrap',
               gap: '16px',
             }}>
               <span style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: 'var(--font-fraunces), serif',
                 fontStyle: 'italic',
                 fontSize: '18px',
                 color: 'rgba(255,255,255,.8)',

@@ -1,9 +1,32 @@
 import type { Metadata } from 'next';
+import { Fraunces, Manrope, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import ClientLayout from '@/components/layout/ClientLayout';
 
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-fraunces',
+  display: 'swap',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-manrope',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sindhcitizenwelfare.org'),
+  metadataBase: new URL('https://scwo-website.vercel.app'),
   title: {
     default: 'Sindh Citizen Welfare Organization (SCWO) | NGO in Karachi Pakistan',
     template: '%s | SCWO',
@@ -21,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Sindh Citizen Welfare Organization (SCWO) | NGO in Karachi Pakistan',
     description: 'Humanity Comes First. Empowering Communities Across Sindh Through Healthcare, Education & Welfare.',
     type: 'website',
-    url: 'https://sindhcitizenwelfare.org',
+    url: 'https://scwo-website.vercel.app',
     siteName: 'Sindh Citizen Welfare Organization',
     locale: 'en_PK',
     images: [
@@ -46,8 +69,8 @@ const jsonLd = {
   '@type': 'NGO',
   name: 'Sindh Citizen Welfare Organization',
   alternateName: 'SCWO',
-  url: 'https://sindhcitizenwelfare.org',
-  logo: 'https://sindhcitizenwelfare.org/logo.png',
+  url: 'https://scwo-website.vercel.app',
+  logo: 'https://scwo-website.vercel.app/logo.png',
   description: 'A humanitarian NGO in Karachi, Pakistan providing healthcare, education, women empowerment, legal aid, and social welfare services across Sindh.',
   foundingDate: '2024',
   founder: { '@type': 'Person', name: 'Nadia Bano' },
@@ -73,14 +96,11 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

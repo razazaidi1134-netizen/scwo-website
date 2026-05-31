@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="container-custom" style={{ position: 'relative' }}>
           <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>About SCWO</div>
           <h1 style={{
-            fontFamily: "'Fraunces', serif",
+            fontFamily: "var(--font-fraunces), serif",
             fontSize: 'clamp(48px, 7vw, 80px)',
             fontWeight: 400,
             lineHeight: 1.02,
@@ -63,8 +63,8 @@ export default function AboutPage() {
           <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)', flexWrap: 'wrap' }}>
             {[{ label: 'Est.', value: '2024' }, { label: 'Programs', value: '7 Active' }, { label: 'Province', value: 'Sindh' }].map(({ label, value }) => (
               <div key={label}>
-                <small style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
-                <strong style={{ fontFamily: "'Fraunces', serif", fontSize: '18px', fontWeight: 500 }}>{value}</strong>
+                <small style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
+                <strong style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '18px', fontWeight: 500 }}>{value}</strong>
               </div>
             ))}
           </div>
@@ -77,7 +77,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-24 items-start">
             <AnimatedSection className="lg:sticky lg:top-[100px]">
               <div className="eyebrow">Who We Are</div>
-              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px, 4vw, 48px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+              <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(36px, 4vw, 48px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                 A mission rooted in <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>compassion</em>.
               </h2>
             </AnimatedSection>
@@ -107,7 +107,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow">Our Purpose</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
               Mission &amp; <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>Vision</em>.
             </h2>
           </AnimatedSection>
@@ -115,8 +115,8 @@ export default function AboutPage() {
             {/* Mission */}
             <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--a4)', marginBottom: '24px' }}>— 01 / MISSION</div>
-              <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '34px', fontWeight: 400, color: '#fff', marginBottom: '24px', lineHeight: 1.1 }}>
+              <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--a4)', marginBottom: '24px' }}>— 01 / MISSION</div>
+              <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '34px', fontWeight: 400, color: '#fff', marginBottom: '24px', lineHeight: 1.1 }}>
                 What we <em style={{ fontStyle: 'italic', color: 'var(--a4)' }}>do</em>.
               </h3>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: '16px' }}>
@@ -131,8 +131,8 @@ export default function AboutPage() {
             {/* Vision */}
             <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--a5)', marginBottom: '24px' }}>— 02 / VISION</div>
-              <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '34px', fontWeight: 400, color: 'var(--g9)', marginBottom: '24px', lineHeight: 1.1 }}>
+              <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--a5)', marginBottom: '24px' }}>— 02 / VISION</div>
+              <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '34px', fontWeight: 400, color: 'var(--g9)', marginBottom: '24px', lineHeight: 1.1 }}>
                 Where we&apos;re <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>going</em>.
               </h3>
               <p style={{ fontSize: '15px', color: 'var(--soft)', lineHeight: 1.8, marginBottom: '16px' }}>
@@ -153,7 +153,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow">Guiding Principles</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
               Our core <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>values</em>.
             </h2>
           </AnimatedSection>
@@ -161,8 +161,8 @@ export default function AboutPage() {
             {values.map(({ num, title, desc }) => (
               <StaggerItem key={title}>
                 <div style={{ background: 'var(--g9)', padding: '48px 36px', height: '100%' }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', textTransform: 'uppercase' }}>{num}</span>
-                  <div style={{ fontFamily: "'Fraunces', serif", fontSize: '36px', fontWeight: 400, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', margin: '12px 0 16px' }}>{title}</div>
+                  <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', textTransform: 'uppercase' }}>{num}</span>
+                  <div style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '36px', fontWeight: 400, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', margin: '12px 0 16px' }}>{title}</div>
                   <p style={{ fontSize: '14px', color: 'rgba(255,255,255,.55)', lineHeight: 1.7 }}>{desc}</p>
                 </div>
               </StaggerItem>
@@ -176,7 +176,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>Leadership</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
               A leader driven by <em style={{ fontStyle: 'italic', color: 'var(--a4)' }}>purpose</em>.
             </h2>
           </AnimatedSection>
@@ -185,22 +185,22 @@ export default function AboutPage() {
               {/* Fact table */}
               <div style={{ border: '1px solid rgba(212,160,23,.2)', borderRadius: '2px', overflow: 'hidden' }}>
                 <div style={{ background: 'var(--a5)', padding: '20px 24px' }}>
-                  <strong style={{ fontFamily: "'Fraunces', serif", fontSize: '18px', color: 'var(--g9)' }}>Nadia Bano</strong>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', color: 'var(--g8)', textTransform: 'uppercase', marginTop: '4px' }}>President &amp; Co-Founder · SCWO</div>
+                  <strong style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '18px', color: 'var(--g9)' }}>Nadia Bano</strong>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', color: 'var(--g8)', textTransform: 'uppercase', marginTop: '4px' }}>President &amp; Co-Founder · SCWO</div>
                 </div>
                 {orgFacts.map(({ label, value }, i) => (
                   <div key={label} style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 24px', background: i % 2 === 0 ? 'rgba(255,255,255,.03)' : 'rgba(255,255,255,.06)', borderBottom: i < orgFacts.length - 1 ? '1px solid rgba(255,255,255,.06)' : 'none' }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' }}>{label}</span>
+                    <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.1em', color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' }}>{label}</span>
                     <span style={{ fontSize: '13px', color: '#fff', fontWeight: 500 }}>{value}</span>
                   </div>
                 ))}
                 <div style={{ background: 'var(--g8)', padding: '14px 24px', textAlign: 'center' }}>
-                  <span style={{ fontFamily: "'Fraunces', serif", fontStyle: 'italic', fontSize: '14px', color: 'var(--a4)' }}>Humanity Comes First</span>
+                  <span style={{ fontFamily: "var(--font-fraunces), serif", fontStyle: 'italic', fontSize: '14px', color: 'var(--a4)' }}>Humanity Comes First</span>
                 </div>
               </div>
               {/* Bio */}
               <div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '13px', letterSpacing: '0.12em', color: 'var(--a4)', marginBottom: '28px', textTransform: 'uppercase' }}>
+                <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '13px', letterSpacing: '0.12em', color: 'var(--a4)', marginBottom: '28px', textTransform: 'uppercase' }}>
                   President &amp; Co-Founder — Sindh Citizen Welfare Organization
                 </div>
                 <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.75)', lineHeight: 1.8, marginBottom: '20px' }}>
@@ -229,7 +229,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <AnimatedSection style={{ marginBottom: '64px' }}>
             <div className="eyebrow">Why Choose SCWO</div>
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+            <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(36px, 4vw, 54px)', fontWeight: 400, color: 'var(--g9)', margin: '20px 0 0', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
               Our commitment <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>to you</em>.
             </h2>
           </AnimatedSection>
@@ -237,7 +237,7 @@ export default function AboutPage() {
             {whyChoose.map((item, i) => (
               <StaggerItem key={item}>
                 <div style={{ background: '#fff', padding: '32px 28px', display: 'flex', gap: '16px', alignItems: 'flex-start', height: '100%' }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: 'var(--a5)', flexShrink: 0, marginTop: '2px' }}>0{i + 1}</span>
+                  <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', color: 'var(--a5)', flexShrink: 0, marginTop: '2px' }}>0{i + 1}</span>
                   <span style={{ fontSize: '15px', color: 'var(--g8)', lineHeight: 1.65, fontWeight: 500 }}>{item}</span>
                 </div>
               </StaggerItem>

@@ -70,7 +70,7 @@ export default function Header() {
       {/* ── Top social bar ── */}
       <div style={{ borderBottom: '1px solid rgba(255,255,255,.06)', background: 'rgba(0,0,0,.15)' }}>
         <div className="container-custom flex items-center justify-between" style={{ height: '36px' }}>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', color: 'rgba(255,255,255,.35)', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', color: 'rgba(255,255,255,.35)', textTransform: 'uppercase' }}>
             Humanity Comes First · Since 2024
           </span>
           <div style={{ display: 'flex', gap: '4px' }}>
@@ -129,7 +129,7 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <strong style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 17, letterSpacing: '0.02em', color: '#fff' }}>
+            <strong style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 600, fontSize: 17, letterSpacing: '0.02em', color: '#fff' }}>
               SCWO
             </strong>
             <small style={{ fontSize: 10, color: 'var(--a4)', letterSpacing: '0.18em', textTransform: 'uppercase', marginTop: 2 }}>

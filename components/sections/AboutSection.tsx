@@ -21,7 +21,7 @@ export default function AboutSection() {
               <div className="eyebrow">Who We Are</div>
               <h2
                 style={{
-                  fontFamily: 'Fraunces, serif',
+                  fontFamily: 'var(--font-fraunces), serif',
                   fontSize: 'clamp(36px, 4.5vw, 54px)',
                   fontWeight: 400,
                   margin: '24px 0 32px',
@@ -36,7 +36,7 @@ export default function AboutSection() {
               {/* Blockquote */}
               <p
                 style={{
-                  fontFamily: 'Fraunces, serif',
+                  fontFamily: 'var(--font-fraunces), serif',
                   fontStyle: 'italic',
                   fontSize: 21,
                   lineHeight: 1.55,
@@ -62,7 +62,7 @@ export default function AboutSection() {
                   <div key={p.label}>
                     <div
                       style={{
-                        fontFamily: 'Fraunces, serif',
+                        fontFamily: 'var(--font-fraunces), serif',
                         fontSize: 48,
                         color: 'var(--a5)',
                         lineHeight: 1,
@@ -73,7 +73,7 @@ export default function AboutSection() {
                     </div>
                     <div
                       style={{
-                        fontFamily: 'JetBrains Mono, monospace',
+                        fontFamily: 'var(--font-mono), monospace',
                         fontSize: 11,
                         letterSpacing: '0.15em',
                         textTransform: 'uppercase',
@@ -136,7 +136,7 @@ export default function AboutSection() {
                 >
                   <span
                     style={{
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: 'var(--font-mono), monospace',
                       fontSize: 11,
                       letterSpacing: '0.12em',
                       textTransform: 'uppercase',
@@ -158,7 +158,7 @@ export default function AboutSection() {
               >
                 <p
                   style={{
-                    fontFamily: 'JetBrains Mono, monospace',
+                    fontFamily: 'var(--font-mono), monospace',
                     fontSize: 10,
                     letterSpacing: '0.15em',
                     color: 'var(--a4)',
@@ -170,7 +170,7 @@ export default function AboutSection() {
                 </p>
                 <p
                   style={{
-                    fontFamily: 'Fraunces, serif',
+                    fontFamily: 'var(--font-fraunces), serif',
                     fontStyle: 'italic',
                     fontSize: 18,
                     color: '#fff',

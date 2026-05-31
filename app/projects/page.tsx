@@ -37,7 +37,7 @@ export default function ProjectsPage() {
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 75% 30%, rgba(212,160,23,.12) 0%, transparent 55%)', pointerEvents: 'none' }} />
         <div className="container-custom" style={{ position: 'relative' }}>
           <div className="eyebrow" style={{ color: 'rgba(255,255,255,.5)' }}>What We Do</div>
-          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(48px, 7vw, 80px)', fontWeight: 400, lineHeight: 1.02, letterSpacing: '-0.03em', margin: '20px 0 24px' }}>
+          <h1 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(48px, 7vw, 80px)', fontWeight: 400, lineHeight: 1.02, letterSpacing: '-0.03em', margin: '20px 0 24px' }}>
             Seven pillars of <em style={{ fontStyle: 'italic', color: 'var(--a4)' }}>impact</em>.
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,.7)', maxWidth: '520px', lineHeight: 1.65 }}>
@@ -47,8 +47,8 @@ export default function ProjectsPage() {
           <div style={{ display: 'flex', gap: '48px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,.1)', flexWrap: 'wrap' }}>
             {[{ label: 'Programs', value: '07 Active' }, { label: 'Coverage', value: 'Sindh' }, { label: 'Since', value: '2024' }].map(({ label, value }) => (
               <div key={label}>
-                <small style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
-                <strong style={{ fontFamily: "'Fraunces', serif", fontSize: '18px', fontWeight: 500 }}>{value}</strong>
+                <small style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.15em', color: 'var(--a4)', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>{label}</small>
+                <strong style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '18px', fontWeight: 500 }}>{value}</strong>
               </div>
             ))}
           </div>
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
               <p style={{ fontSize: '16px', color: 'rgba(255,255,255,.6)', maxWidth: '600px', lineHeight: 1.7 }}>
                 Seven focused programs addressing the most critical needs of underprivileged communities across Sindh.
               </p>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: 'rgba(255,255,255,.3)', letterSpacing: '0.1em' }}>07 ACTIVE PROGRAMS</span>
+              <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', color: 'rgba(255,255,255,.3)', letterSpacing: '0.1em' }}>07 ACTIVE PROGRAMS</span>
             </div>
           </AnimatedSection>
 
@@ -72,13 +72,13 @@ export default function ProjectsPage() {
               <StaggerItem key={slug}>
                 <Link href={`/projects/${slug}`} className="prog-card-link">
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: 'var(--a4)', letterSpacing: '0.15em' }}>{num}</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '9px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g9)', background: 'var(--a5)', padding: '3px 10px', borderRadius: '2px' }}>{category}</span>
+                    <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', color: 'var(--a4)', letterSpacing: '0.15em' }}>{num}</span>
+                    <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '9px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g9)', background: 'var(--a5)', padding: '3px 10px', borderRadius: '2px' }}>{category}</span>
                   </div>
                   <div style={{ width: '52px', height: '52px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', marginBottom: '20px', border: '3px solid var(--g9)' }}>{emoji}</div>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>{title}</h3>
+                  <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>{title}</h3>
                   <p style={{ color: 'rgba(255,255,255,.6)', fontSize: '13px', lineHeight: 1.65, flex: 1, marginBottom: '12px' }}>{desc}</p>
-                  <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', color: 'rgba(255,255,255,.25)', lineHeight: 1.6, marginBottom: '16px', letterSpacing: '0.02em' }}>{keywords}</p>
+                  <p style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', color: 'rgba(255,255,255,.25)', lineHeight: 1.6, marginBottom: '16px', letterSpacing: '0.02em' }}>{keywords}</p>
                   <span style={{ fontSize: '14px', color: 'var(--a5)', alignSelf: 'flex-start' }}>Learn more →</span>
                 </Link>
               </StaggerItem>
@@ -88,8 +88,8 @@ export default function ProjectsPage() {
             <StaggerItem>
               <div style={{ background: 'var(--a5)', padding: '36px 28px 28px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '280px' }}>
                 <div>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--g8)', marginBottom: '20px', opacity: 0.7 }}>Support Us</div>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '28px', fontWeight: 400, color: 'var(--g9)', lineHeight: 1.2 }}>Support a program today.</h3>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--g8)', marginBottom: '20px', opacity: 0.7 }}>Support Us</div>
+                  <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '28px', fontWeight: 400, color: 'var(--g9)', lineHeight: 1.2 }}>Support a program today.</h3>
                 </div>
                 <Link href="/contact#donate" className="btn btn-dark" style={{ alignSelf: 'flex-start', marginTop: '24px' }}>Donate Now →</Link>
               </div>

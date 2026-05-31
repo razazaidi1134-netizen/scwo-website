@@ -6,7 +6,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const programs = [
   {
-    slug: 'healthcare-hub',
+    slug: 'ambulance-health',
     num: '01',
     icon: '🏥',
     title: 'Healthcare Hub',
@@ -14,7 +14,7 @@ const programs = [
     img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80',
   },
   {
-    slug: 'education-hub',
+    slug: 'educational-centers',
     num: '02',
     icon: '🎓',
     title: 'Education Hub',
@@ -22,11 +22,11 @@ const programs = [
     img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=900&q=80',
   },
   {
-    slug: 'food-relief',
+    slug: 'computer-training',
     num: '03',
-    icon: '🍱',
-    title: 'Food Relief',
-    desc: 'Regular food distribution drives and ration packages for vulnerable families in need.',
+    icon: '💻',
+    title: 'Computer Training',
+    desc: 'Digital skills and computer education programs for students and youth seeking modern employment.',
     img: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80',
   },
   {
@@ -46,11 +46,11 @@ const programs = [
     img: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80',
   },
   {
-    slug: 'flood-relief',
+    slug: 'industrial-homes',
     num: '06',
-    icon: '🌊',
-    title: 'Flood Relief',
-    desc: 'Emergency response, relief supplies, and rehabilitation support for flood-affected communities.',
+    icon: '✂️',
+    title: 'Industrial Homes',
+    desc: 'Vocational training helping women build sustainable income through sewing and handicrafts.',
     img: 'https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=900&q=80',
   },
   {
@@ -81,7 +81,7 @@ export default function ProgramsGrid() {
             </div>
             <div
               style={{
-                fontFamily: 'JetBrains Mono, monospace',
+                fontFamily: 'var(--font-mono), monospace',
                 fontSize: 12,
                 color: 'rgba(255,255,255,.4)',
                 letterSpacing: '0.1em',
@@ -92,9 +92,9 @@ export default function ProgramsGrid() {
           </div>
         </AnimatedSection>
 
-        {/* Grid */}
+        {/* Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
         <div
-          className="grid sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           style={{
             gap: 1,
             background: 'rgba(255,255,255,.08)',
@@ -130,7 +130,7 @@ export default function ProgramsGrid() {
                     className="absolute z-10"
                     style={{
                       top: 16, left: 16,
-                      fontFamily: 'JetBrains Mono, monospace',
+                      fontFamily: 'var(--font-mono), monospace',
                       fontSize: 11,
                       color: 'var(--a4)',
                       letterSpacing: '0.15em',
@@ -162,7 +162,7 @@ export default function ProgramsGrid() {
                 <div style={{ padding: '36px 28px 28px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <h3
                     style={{
-                      fontFamily: 'Fraunces, serif',
+                      fontFamily: 'var(--font-fraunces), serif',
                       fontSize: 22,
                       fontWeight: 500,
                       marginBottom: 10,
@@ -205,7 +205,7 @@ export default function ProgramsGrid() {
               </div>
               <h3
                 style={{
-                  fontFamily: 'Fraunces, serif',
+                  fontFamily: 'var(--font-fraunces), serif',
                   fontSize: 30,
                   color: 'var(--g9)',
                   fontWeight: 500,

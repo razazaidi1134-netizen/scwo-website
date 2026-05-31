@@ -89,21 +89,21 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
         <div className="container-custom" style={{ position: 'relative' }}>
           <Link href="/projects" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            fontFamily: "'JetBrains Mono', monospace", fontSize: '11px',
+            fontFamily: "var(--font-mono), monospace", fontSize: '11px',
             letterSpacing: '0.12em', textTransform: 'uppercase',
             color: 'rgba(255,255,255,.45)', textDecoration: 'none',
             marginBottom: '40px',
           }}>← All Programs</Link>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px', flexWrap: 'wrap' }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '12px', letterSpacing: '0.15em', color: 'var(--a4)' }}>{program.num}</span>
+            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '12px', letterSpacing: '0.15em', color: 'var(--a4)' }}>{program.num}</span>
             <div style={{ width: '56px', height: '56px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', border: '3px solid rgba(212,160,23,.3)' }}>
               {program.emoji}
             </div>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)' }}>{program.category}</span>
+            <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)' }}>{program.category}</span>
           </div>
 
-          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: 'clamp(40px, 6vw, 68px)', fontWeight: 400, lineHeight: 1.05, letterSpacing: '-0.03em', margin: '0 0 20px' }}>
+          <h1 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 'clamp(40px, 6vw, 68px)', fontWeight: 400, lineHeight: 1.05, letterSpacing: '-0.03em', margin: '0 0 20px' }}>
             {program.title}
           </h1>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,.7)', maxWidth: '520px', lineHeight: 1.65 }}>{program.description}</p>
@@ -120,8 +120,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               <AnimatedSection>
                 <div style={{ background: '#fff', border: '1px solid var(--line)', borderBottom: 'none', padding: '40px 44px', position: 'relative' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, width: '3px', height: '100%', background: 'var(--a5)' }} />
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--a5)', marginBottom: '16px' }}>About This Program</div>
-                  <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '32px', fontWeight: 400, color: 'var(--g9)', marginBottom: '20px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--a5)', marginBottom: '16px' }}>About This Program</div>
+                  <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '32px', fontWeight: 400, color: 'var(--g9)', marginBottom: '20px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                     What we <em style={{ fontStyle: 'italic', color: 'var(--a5)' }}>do</em>.
                   </h2>
                   <p style={{ fontSize: '16px', color: 'var(--soft)', lineHeight: 1.85 }}>{program.about}</p>
@@ -130,11 +130,11 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
               <AnimatedSection delay={0.1}>
                 <div style={{ background: '#fff', border: '1px solid var(--line)', borderBottom: 'none', padding: '40px 44px' }}>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--soft)', marginBottom: '24px' }}>What We Provide</div>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--soft)', marginBottom: '24px' }}>What We Provide</div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
                     {program.whatWeDo.map((item, i) => (
                       <div key={item} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', padding: '16px 0', borderBottom: i < program.whatWeDo.length - 1 ? '1px solid var(--line)' : 'none' }}>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: 'var(--a5)', flexShrink: 0, marginTop: '2px' }}>0{i + 1}</span>
+                        <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '11px', color: 'var(--a5)', flexShrink: 0, marginTop: '2px' }}>0{i + 1}</span>
                         <span style={{ fontSize: '15px', color: 'var(--g8)', lineHeight: 1.65 }}>{item}</span>
                       </div>
                     ))}
@@ -144,7 +144,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
               <AnimatedSection delay={0.2}>
                 <div style={{ background: 'var(--paper)', border: '1px solid var(--line)', padding: '20px 44px' }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', color: 'var(--soft)', opacity: 0.6, letterSpacing: '0.05em' }}>{program.seoKeywords}</span>
+                  <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', color: 'var(--soft)', opacity: 0.6, letterSpacing: '0.05em' }}>{program.seoKeywords}</span>
                 </div>
               </AnimatedSection>
             </div>
@@ -154,7 +154,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               <AnimatedSection delay={0.1}>
                 <div style={{ border: '1px solid var(--line)', borderBottom: 'none', borderRadius: '2px 2px 0 0', overflow: 'hidden' }}>
                   <div style={{ background: 'var(--g9)', padding: '16px 24px' }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--a4)' }}>Program Details</span>
+                    <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--a4)' }}>Program Details</span>
                   </div>
                   {[
                     { label: 'Organization', value: 'SCWO' },
@@ -163,7 +163,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                     { label: 'Status',       value: '● Active' },
                   ].map(({ label, value }) => (
                     <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 24px', background: '#fff', borderBottom: '1px solid var(--line)' }}>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--soft)' }}>{label}</span>
+                      <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--soft)' }}>{label}</span>
                       <span style={{ fontSize: '13px', color: value === '● Active' ? 'var(--g7)' : 'var(--g9)', fontWeight: 600 }}>{value}</span>
                     </div>
                   ))}
@@ -172,8 +172,8 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
 
               <AnimatedSection delay={0.15}>
                 <div style={{ background: 'var(--a5)', padding: '28px 24px' }}>
-                  <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--g8)', marginBottom: '12px', opacity: 0.7 }}>Support This Program</div>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', fontWeight: 400, color: 'var(--g9)', marginBottom: '10px', lineHeight: 1.2 }}>
+                  <div style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--g8)', marginBottom: '12px', opacity: 0.7 }}>Support This Program</div>
+                  <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '22px', fontWeight: 400, color: 'var(--g9)', marginBottom: '10px', lineHeight: 1.2 }}>
                     Help us <em style={{ fontStyle: 'italic' }}>make an impact</em>.
                   </h3>
                   <p style={{ fontSize: '13px', color: 'var(--g8)', lineHeight: 1.7, marginBottom: '20px' }}>
@@ -192,7 +192,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               <AnimatedSection delay={0.2}>
                 <div style={{ border: '1px solid var(--line)', borderTop: 'none', borderRadius: '0 0 2px 2px', overflow: 'hidden' }}>
                   <div style={{ background: 'var(--paper)', padding: '14px 24px', borderBottom: '1px solid var(--line)' }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--soft)' }}>All Programs</span>
+                    <span style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--soft)' }}>All Programs</span>
                   </div>
                   <style>{`
                     .prog-nav-link { display:flex;align-items:center;gap:10px;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s; }

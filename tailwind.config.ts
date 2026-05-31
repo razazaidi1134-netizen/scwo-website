@@ -57,9 +57,9 @@ const config: Config = {
       },
 
       fontFamily: {
-        sans:  ['Manrope', 'sans-serif'],
-        serif: ['Fraunces', 'serif'],
-        mono:  ['JetBrains Mono', 'monospace'],
+        sans:  ['var(--font-manrope)', 'sans-serif'],
+        serif: ['var(--font-fraunces)', 'serif'],
+        mono:  ['var(--font-mono)', 'monospace'],
       },
 
       borderRadius: {
