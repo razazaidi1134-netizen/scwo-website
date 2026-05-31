@@ -109,8 +109,9 @@ export default function ProgramsGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
+              style={{ height: '100%' }}
             >
-              <Link href={`/projects/${program.slug}`} className="prog-card block">
+              <Link href={`/projects/${program.slug}`} className="prog-card block" style={{ height: '100%' }}>
                 {/* Thumbnail */}
                 <div
                   style={{
@@ -186,6 +187,7 @@ export default function ProgramsGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: programs.length * 0.07 }}
+            style={{ height: '100%' }}
           >
             <div
               style={{

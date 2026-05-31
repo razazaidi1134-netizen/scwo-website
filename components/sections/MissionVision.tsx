@@ -27,7 +27,7 @@ export default function MissionVision() {
         <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '1px', background: 'var(--line)', borderRadius: '2px', overflow: 'hidden', marginBottom: '1px' }}>
 
           {/* Mission */}
-          <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative', overflow: 'hidden' }}>
+          <AnimatedSection delay={0.1} style={{ background: 'var(--g9)', padding: 'clamp(40px, 5vw, 56px) clamp(32px, 4vw, 48px)', position: 'relative', overflow: 'hidden' }}>
             <div style={{
               fontFamily: 'var(--font-mono), monospace',
               fontSize: '11px',
@@ -61,7 +61,7 @@ export default function MissionVision() {
           </AnimatedSection>
 
           {/* Vision */}
-          <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: 'clamp(32px, 5vw, 56px) clamp(24px, 4vw, 48px)', position: 'relative', overflow: 'hidden' }}>
+          <AnimatedSection delay={0.2} style={{ background: 'var(--cream)', padding: 'clamp(40px, 5vw, 56px) clamp(32px, 4vw, 48px)', position: 'relative', overflow: 'hidden' }}>
             <div style={{
               fontFamily: 'var(--font-mono), monospace',
               fontSize: '11px',

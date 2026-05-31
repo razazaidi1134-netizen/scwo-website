@@ -132,7 +132,7 @@ export default function Header() {
             <strong style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 600, fontSize: 17, letterSpacing: '0.02em', color: '#fff' }}>
               SCWO
             </strong>
-            <small style={{ fontSize: 10, color: 'var(--a4)', letterSpacing: '0.18em', textTransform: 'uppercase', marginTop: 2 }}>
+            <small style={{ fontFamily: 'var(--font-mono), monospace', fontSize: 10, color: 'var(--a4)', letterSpacing: '0.18em', textTransform: 'uppercase', marginTop: 2 }}>
               Humanity Comes First
             </small>
           </div>

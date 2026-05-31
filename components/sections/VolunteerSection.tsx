@@ -78,9 +78,9 @@ export default function VolunteerSection() {
               <StaggerItem key={title}>
                 <div style={{
                   background: '#fff',
-                  padding: '36px 40px',
+                  padding: 'clamp(24px, 4vw, 36px) clamp(20px, 4vw, 40px)',
                   display: 'flex',
-                  gap: '24px',
+                  gap: '20px',
                   alignItems: 'flex-start',
                   transition: 'background .2s',
                 }}
@@ -126,7 +126,7 @@ export default function VolunteerSection() {
             {/* CTA row */}
             <div style={{
               background: 'var(--g9)',
-              padding: '28px 40px',
+              padding: 'clamp(20px, 3vw, 28px) clamp(20px, 4vw, 40px)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',

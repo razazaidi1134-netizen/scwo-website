@@ -43,10 +43,10 @@ export default function Footer() {
   return (
     <footer style={{ background: 'var(--g9)', color: 'rgba(255,255,255,.6)' }}>
       <div className="container-custom py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-14">
 
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="rounded-full bg-white overflow-hidden flex-shrink-0"
                 style={{ width: 48, height: 48, border: '2px solid var(--a5)' }}>

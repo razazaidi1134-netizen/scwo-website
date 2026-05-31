@@ -13,7 +13,7 @@ export default function AboutSection() {
   return (
     <section style={{ background: 'var(--cream)', padding: '120px 0' }}>
       <div className="container-custom">
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-20 items-start">
 
           {/* ── Left: sticky headline ── */}
           <AnimatedSection>
@@ -99,9 +99,9 @@ export default function AboutSection() {
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--soft)', marginBottom: 24 }}>
               Led by President Nadia Bano, the organization runs seven structured welfare programs
-              covering healthcare, education, food relief, women empowerment, legal aid, flood response,
-              and social welfare. Each program is designed not just to address immediate needs, but to
-              create lasting, sustainable change in the communities it serves.
+              covering healthcare, education, computer training, women empowerment, legal aid, industrial
+              skills, and social welfare. Each program is designed not just to address immediate needs,
+              but to create lasting, sustainable change in the communities it serves.
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.8, color: 'var(--soft)', marginBottom: 48 }}>
               SCWO operates under the guiding principles of Faith, Unity, and Discipline — believing

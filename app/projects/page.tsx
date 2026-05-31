@@ -78,7 +78,7 @@ export default function ProjectsPage() {
                   <div style={{ width: '52px', height: '52px', background: 'var(--a5)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', marginBottom: '20px', border: '3px solid var(--g9)' }}>{emoji}</div>
                   <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontSize: '20px', fontWeight: 500, color: '#fff', marginBottom: '10px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>{title}</h3>
                   <p style={{ color: 'rgba(255,255,255,.6)', fontSize: '13px', lineHeight: 1.65, flex: 1, marginBottom: '12px' }}>{desc}</p>
-                  <p style={{ fontFamily: "var(--font-mono), monospace", fontSize: '10px', color: 'rgba(255,255,255,.25)', lineHeight: 1.6, marginBottom: '16px', letterSpacing: '0.02em' }}>{keywords}</p>
+                  <span aria-hidden="true" style={{ display: 'none' }}>{keywords}</span>
                   <span style={{ fontSize: '14px', color: 'var(--a5)', alignSelf: 'flex-start' }}>Learn more →</span>
                 </Link>
               </StaggerItem>
