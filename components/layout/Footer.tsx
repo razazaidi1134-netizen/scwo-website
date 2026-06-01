@@ -52,7 +52,7 @@ export default function Footer() {
               <div className="rounded-full overflow-hidden flex-shrink-0"
                 style={{ width: 48, height: 48, border: '2px solid var(--a5)', background: 'var(--g9)' }}>
                 <Image src="/logo.png" alt="SCWO Logo" width={48} height={48}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                  style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
               </div>
               <div>
                 <div style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 17, color: '#fff', fontWeight: 600 }}>SCWO</div>

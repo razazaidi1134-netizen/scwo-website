@@ -125,7 +125,7 @@ export default function Header() {
               alt="SCWO Logo"
               width={54}
               height={54}
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
               priority
             />
           </div>
