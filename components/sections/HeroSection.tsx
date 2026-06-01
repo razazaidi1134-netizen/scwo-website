@@ -224,9 +224,8 @@ export default function HeroSection() {
               <div
                 className="absolute z-30"
                 style={{
-                  top: '20px',
+                  bottom: '20px',
                   right: '20px',
-                  bottom: 'auto',
                   background: 'var(--cream)',
                   padding: '16px 20px',
                   display: 'flex',

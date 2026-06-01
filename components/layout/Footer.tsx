@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="rounded-full overflow-hidden flex-shrink-0"
-                style={{ width: 48, height: 48, border: '2px solid var(--a5)', background: 'var(--g9)' }}>
+                style={{ width: 48, height: 48, border: '2px solid var(--a5)', background: '#fff' }}>
                 <Image src="/logo.png" alt="SCWO Logo" width={48} height={48}
                   style={{ objectFit: 'contain', width: '100%', height: '100%' }} />
               </div>
