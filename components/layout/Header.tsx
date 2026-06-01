@@ -118,14 +118,14 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3.5" onClick={() => setOpen(false)}>
           <div
             className="rounded-full overflow-hidden flex-shrink-0"
-            style={{ width: '54px', height: '54px', border: '2px solid var(--a5)', boxShadow: '0 0 0 2px var(--g9)', background: '#fff' }}
+            style={{ width: '54px', height: '54px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '2px solid var(--a5)', background: '#fff' }}
           >
             <Image
               src="/logo.png"
               alt="SCWO Logo"
               width={54}
               height={54}
-              style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }}
               priority
             />
           </div>
