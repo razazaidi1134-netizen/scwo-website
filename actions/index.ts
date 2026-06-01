@@ -41,6 +41,8 @@ export async function createGalleryItem(formData: FormData) {
     eventDate:     formData.get('eventDate') as string || new Date().toISOString(),
     location:      formData.get('location') as string || 'Karachi, Sindh',
     published:     formData.get('published') === 'true',
+    videoUrls:     (formData.get('videoUrls') as string || '').split(',').filter(Boolean),
+    mediaType:     (formData.get('mediaType') as string) || 'images',
   };
   const validated = GallerySchema.safeParse(raw);
   if (!validated.success) return { error: validated.error.flatten().fieldErrors };
@@ -67,6 +69,8 @@ export async function updateGalleryItem(id: string, formData: FormData) {
     eventDate:     formData.get('eventDate') as string,
     location:      formData.get('location') as string || 'Karachi, Sindh',
     published:     formData.get('published') === 'true',
+    videoUrls:     (formData.get('videoUrls') as string || '').split(',').filter(Boolean),
+    mediaType:     (formData.get('mediaType') as string) || 'images',
   };
   const validated = GallerySchema.safeParse(raw);
   if (!validated.success) return { error: validated.error.flatten().fieldErrors };

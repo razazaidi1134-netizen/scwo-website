@@ -3,13 +3,12 @@ import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '@/lib/auth';
 import { getDashboardStats, getMessages } from '@/actions';
+import { FileText, Image as ImageIcon, Users, Mail, Bell, Plus, Upload, UserPlus, ArrowRight } from 'lucide-react';
 
 export default async function DashboardPage() {
-  // ── Auth check ──────────────────────────────────────────────────────────
   const session = await getServerSession(authOptions);
   if (!session) redirect('/admin/login');
 
-  // ── Data ─────────────────────────────────────────────────────────────────
   const [stats, recentMessages] = await Promise.all([
     getDashboardStats(),
     getMessages(),
@@ -18,21 +17,21 @@ export default async function DashboardPage() {
   const recent = (recentMessages as any[]).slice(0, 5);
 
   const statCards = [
-    { label: 'Programs',          value: stats.programs, icon: '📋', href: '/admin/programs', color: 'var(--g9)',  textColor: '#fff' },
-    { label: 'Gallery Activities', value: stats.gallery,  icon: '🖼',  href: '/admin/gallery',  color: 'var(--g8)', textColor: '#fff' },
-    { label: 'Team Members',      value: stats.team,     icon: '👥',  href: '/admin/team',     color: 'var(--g7)', textColor: '#fff' },
-    { label: 'Messages',          value: stats.messages, icon: '✉',   href: '/admin/messages', color: 'var(--a5)', textColor: 'var(--g9)' },
-    { label: 'Unread',            value: stats.unread,   icon: '🔔',  href: '/admin/messages',
+    { label: 'Programs',          value: stats.programs, Icon: FileText,  href: '/admin/programs', color: 'var(--g9)',  textColor: '#fff' },
+    { label: 'Gallery Activities', value: stats.gallery,  Icon: ImageIcon, href: '/admin/gallery',  color: 'var(--g8)', textColor: '#fff' },
+    { label: 'Team Members',      value: stats.team,     Icon: Users,     href: '/admin/team',     color: 'var(--g7)', textColor: '#fff' },
+    { label: 'Messages',          value: stats.messages, Icon: Mail,      href: '/admin/messages', color: 'var(--a5)', textColor: 'var(--g9)' },
+    { label: 'Unread',            value: stats.unread,   Icon: Bell,      href: '/admin/messages',
       color:     stats.unread > 0 ? '#c0392b' : 'var(--paper)',
       textColor: stats.unread > 0 ? '#fff'    : 'var(--soft)',
     },
   ];
 
   const quickActions = [
-    { label: 'Add Program',       href: '/admin/programs/new', icon: '＋' },
-    { label: 'Upload to Gallery', href: '/admin/gallery/new',  icon: '↑' },
-    { label: 'Add Team Member',   href: '/admin/team/new',     icon: '＋' },
-    { label: 'View Messages',     href: '/admin/messages',     icon: '→' },
+    { label: 'Add Program',       href: '/admin/programs/new', Icon: Plus },
+    { label: 'Upload to Gallery', href: '/admin/gallery/new',  Icon: Upload },
+    { label: 'Add Team Member',   href: '/admin/team/new',     Icon: UserPlus },
+    { label: 'View Messages',     href: '/admin/messages',     Icon: ArrowRight },
   ];
 
   return (
@@ -55,13 +54,15 @@ export default async function DashboardPage() {
         display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
         gap: '1px', background: 'var(--line)', borderRadius: '2px',
         overflow: 'hidden', marginBottom: '32px',
-      }}>
-        {statCards.map(({ label, value, icon, href, color, textColor }) => (
+      }}
+        className="admin-stat-grid"
+      >
+        {statCards.map(({ label, value, Icon, href, color, textColor }) => (
           <Link key={label} href={href} style={{
             background: color, padding: '28px 24px',
             textDecoration: 'none', display: 'block',
           }}>
-            <div style={{ fontSize: '22px', marginBottom: '12px' }}>{icon}</div>
+            <Icon className="w-5 h-5" style={{ color: textColor, marginBottom: '12px', opacity: 0.75 }} />
             <div style={{
               fontFamily: "'Fraunces', serif", fontSize: '40px',
               color: textColor, lineHeight: 1,
@@ -77,7 +78,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* ── Bottom grid ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="admin-bottom-grid">
 
         {/* Quick Actions */}
         <div style={{ background: '#fff', border: '1px solid var(--line)', borderRadius: '2px', overflow: 'hidden' }}>
@@ -89,11 +90,18 @@ export default async function DashboardPage() {
           <style>{`
             .qa-link { background:#fff; padding:24px; display:flex; flex-direction:column; gap:8px; text-decoration:none; transition:background .15s; }
             .qa-link:hover { background:var(--paper); }
+            @media (max-width:1023px) {
+              .admin-stat-grid { grid-template-columns: repeat(3,1fr) !important; }
+              .admin-bottom-grid { grid-template-columns: 1fr !important; }
+            }
+            @media (max-width:640px) {
+              .admin-stat-grid { grid-template-columns: repeat(2,1fr) !important; }
+            }
           `}</style>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', background: 'var(--line)' }}>
-            {quickActions.map(({ label, href, icon }) => (
+            {quickActions.map(({ label, href, Icon }) => (
               <Link key={label} href={href} className="qa-link">
-                <span style={{ fontFamily: "'Fraunces', serif", fontSize: '24px', color: 'var(--a5)' }}>{icon}</span>
+                <Icon className="w-6 h-6" style={{ color: 'var(--a5)' }} />
                 <span style={{ fontSize: '14px', color: 'var(--g9)', fontWeight: 600 }}>{label}</span>
               </Link>
             ))}

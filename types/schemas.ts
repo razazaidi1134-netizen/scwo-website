@@ -27,6 +27,8 @@ export const GallerySchema = z.object({
   eventDate:     z.string().optional(),
   location:      z.string().optional().default('Karachi, Sindh'),
   published:     z.boolean().optional().default(false),
+  videoUrls:     z.array(z.string()).optional().default([]),
+  mediaType:     z.enum(['images', 'videos', 'both']).optional().default('images'),
 });
 
 export const TeamMemberSchema = z.object({

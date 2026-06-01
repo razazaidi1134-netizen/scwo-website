@@ -33,6 +33,8 @@ export interface IGallery extends Document {
   title: string; slug: string; description: string; category: string;
   images: string[]; featuredImage: string; eventDate: Date;
   location: string; published: boolean;
+  videoUrls: string[];
+  mediaType: 'images' | 'videos' | 'both';
 }
 
 const GallerySchema = new Schema<IGallery>({
@@ -49,6 +51,8 @@ const GallerySchema = new Schema<IGallery>({
   eventDate:     { type: Date, default: Date.now },
   location:      { type: String, default: 'Karachi, Sindh' },
   published:     { type: Boolean, default: false },
+  videoUrls:     [{ type: String }],
+  mediaType:     { type: String, enum: ['images', 'videos', 'both'], default: 'images' },
 }, { timestamps: true });
 
 export const Gallery = (models.Gallery || model<IGallery>('Gallery', GallerySchema)) as mongoose.Model<IGallery>;
