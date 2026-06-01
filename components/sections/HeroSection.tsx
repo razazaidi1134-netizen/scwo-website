@@ -152,7 +152,7 @@ export default function HeroSection() {
                 }}
               >
                 <Image
-                  src="/nadia-bano.jpg"
+                  src="/nadia-bano.png"
                   alt="Nadia Bano — President & Co-Founder, SCWO"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'top center', mixBlendMode: 'luminosity' }}
