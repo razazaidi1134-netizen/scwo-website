@@ -65,7 +65,7 @@ export default function Header() {
 
   return (
     <header
-      style={{ background: 'var(--g9)', borderBottom: '1px solid rgba(255,255,255,.05)' }}
+      style={{ background: '#fff', borderBottom: '1px solid rgba(255,255,255,.05)' }}
       className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-[0_4px_24px_rgba(0,0,0,.3)]' : ''}`}
     >
       {/* ── Top social bar ── */}
@@ -118,7 +118,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3.5" onClick={() => setOpen(false)}>
           <div
             className="rounded-full overflow-hidden flex-shrink-0"
-            style={{ width: '54px', height: '54px', border: '2px solid var(--a5)', boxShadow: '0 0 0 2px var(--g9)', background: 'var(--g9)' }}
+            style={{ width: '54px', height: '54px', border: '2px solid var(--a5)', boxShadow: '0 0 0 2px var(--g9)', background: '#fff' }}
           >
             <Image
               src="/logo.png"
@@ -181,7 +181,7 @@ export default function Header() {
         <div
           id="mobile-nav"
           className="md:hidden px-4 pb-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,.08)', background: 'var(--g9)' }}
+          style={{ borderTop: '1px solid rgba(255,255,255,.08)', background: '#fff' }}
         >
           <nav className="flex flex-col pt-4 gap-1" aria-label="Mobile navigation">
             {navLinks.map((link) => (
