@@ -60,7 +60,7 @@ export default function DonationCTA() {
                 className="btn btn-outline btn-lg"
                 style={{ borderColor: 'var(--g9)', color: 'var(--g9)' }}
               >
-                Learn More
+                Volunteer With Us
               </Link>
             </div>
           </AnimatedSection>
@@ -131,10 +131,17 @@ export default function DonationCTA() {
               {/* Donate button */}
               <Link
                 href="/contact#donate"
-                className="btn btn-primary"
-                style={{ width: '100%', justifyContent: 'center', display: 'flex', fontSize: '15px', padding: '16px 24px' }}
+                className="btn btn-dark btn-lg"
+                style={{ width: '100%', justifyContent: 'center', display: 'flex', marginBottom: '8px' }}
               >
                 Donate Now →
+              </Link>
+              <Link
+                href="/contact"
+                className="btn btn-outline btn-lg"
+                style={{ borderColor: 'var(--g9)', color: 'var(--g9)', display: 'flex', justifyContent: 'center' }}
+              >
+                Volunteer With Us
               </Link>
 
               {/* Footer note */}

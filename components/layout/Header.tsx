@@ -117,8 +117,8 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3.5" onClick={() => setOpen(false)}>
           <div
-            className="rounded-full bg-white overflow-hidden flex-shrink-0"
-            style={{ width: '54px', height: '54px', border: '2px solid var(--a5)', boxShadow: '0 0 0 2px var(--g9)' }}
+            className="rounded-full overflow-hidden flex-shrink-0"
+            style={{ width: '54px', height: '54px', border: '2px solid var(--a5)', boxShadow: '0 0 0 2px var(--g9)', background: 'var(--g9)' }}
           >
             <Image
               src="/logo.png"

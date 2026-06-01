@@ -1,8 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import { Users } from 'lucide-react';
 
 const highlights = [
   'Sewing, embroidery & handicrafts vocational training',
@@ -35,22 +35,19 @@ export default function WomenEmpowerment() {
               flexDirection: 'column',
               justifyContent: 'flex-end',
             }}>
+              <Image
+                src="/women-program.jpg"
+                alt="SCWO Women Empowerment Programs"
+                fill
+                style={{ objectFit: 'cover', objectPosition: 'center top', opacity: 0.8 }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               <div style={{
                 position: 'absolute',
                 inset: 0,
                 background: 'linear-gradient(180deg, rgba(10,46,30,.2) 0%, rgba(10,46,30,.9) 100%)',
                 zIndex: 1,
               }} />
-              <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -60%)',
-                opacity: 0.08,
-                zIndex: 0,
-              }}>
-                <Users style={{ width: 120, height: 120, color: 'var(--a4)' }} />
-              </div>
               <div style={{ position: 'relative', zIndex: 2, padding: '32px' }}>
                 <div style={{
                   fontFamily: 'var(--font-mono), monospace',

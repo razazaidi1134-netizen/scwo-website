@@ -49,8 +49,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="rounded-full bg-white overflow-hidden flex-shrink-0"
-                style={{ width: 48, height: 48, border: '2px solid var(--a5)' }}>
+              <div className="rounded-full overflow-hidden flex-shrink-0"
+                style={{ width: 48, height: 48, border: '2px solid var(--a5)', background: 'var(--g9)' }}>
                 <Image src="/logo.png" alt="SCWO Logo" width={48} height={48}
                   style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
               </div>

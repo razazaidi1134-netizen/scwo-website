@@ -147,14 +147,15 @@ export default function HeroSection() {
                   height: 480,
                   borderRadius: 2,
                   overflow: 'hidden',
-                  border: '1px solid rgba(212,160,23,.25)',
+                  border: '1px solid rgba(212,160,23,0.3)',
+                  background: 'var(--g9)',
                 }}
               >
                 <Image
                   src="/nadia-bano.jpg"
                   alt="Nadia Bano — President & Co-Founder, SCWO"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  style={{ objectFit: 'cover', objectPosition: 'top center', mixBlendMode: 'luminosity' }}
                   priority
                   sizes="370px"
                 />
@@ -162,6 +163,10 @@ export default function HeroSection() {
                   className="absolute inset-0 z-10"
                   style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(10,46,30,.88) 100%)' }}
                 />
+                <div style={{
+                  position: 'absolute', inset: 0, zIndex: 5,
+                  background: 'linear-gradient(135deg, rgba(10,46,30,0.4) 0%, rgba(10,46,30,0.1) 40%, rgba(10,46,30,0.5) 100%)'
+                }} />
                 <p
                   className="absolute z-20"
                   style={{
@@ -226,8 +231,8 @@ export default function HeroSection() {
               <div
                 className="absolute z-30"
                 style={{
-                  bottom: 60,
-                  right: 0,
+                  bottom: '90px',
+                  right: '-5px',
                   background: 'var(--cream)',
                   padding: '16px 20px',
                   display: 'flex',
